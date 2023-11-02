@@ -1,0 +1,138 @@
+/* Acomodo en grid de la pagina */
+/* 5 Columnas para espaciar que no he buscado como cambiar el width de las columnas xd */
+.grid-cont {
+  display: grid;
+  grid-template-areas:
+    'titulo1  titulo2 titulo2 '
+    'menu reservas reservas '
+    'menu reservas reservas';
+
+  gap: 10px;
+  padding: 10px;
+}
+
+.gridTitulo1 {
+  grid-area: titulo1;
+  max-width: 30%;
+  margin-left: 20px;
+}
+
+.gridTitulo2 {
+  grid-area: titulo2;
+  text-align: center;
+}
+
+.gridMenu {
+  grid-area: menu;
+  max-width: 30%;
+  margin-left: 10px;
+}
+
+.gridReservas {
+  grid-area: reservas;
+  width: 100%;
+  max-height: 355px;
+  /* background-color: red; */
+}
+
+/* Estilo caja contenedora */
+.caja {
+  margin: 120px 200px 120px 200px;
+  padding: 40px;
+  min-height: 64vh;
+  background-color: #fef3ec;
+  border: solid 1px black;
+}
+
+/* Clase de error cuando la informacion no es correcta */
+
+.error {
+  border: 2px solid #de3b40;
+}
+
+/* Fonts */
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  box-sizing: border-box;
+}
+
+/* Estilo Titulo */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Estilos Menu Navegacion */
+ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul li {
+  width: 200px;
+  list-style: none;
+  border-bottom: 2px solid black;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+/* Estilo botones */
+.btn,
+.btnCancel {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #e4bb97;
+  border: 1px solid black;
+}
+
+.btn:hover {
+  background-color: #1dd75b;
+  color: #000000;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.btnCancel:hover {
+  background-color: #de3b40;
+  font-style: italic;
+}
+
+/* Estilo reservas */
+
+/* Hacer scroll dentro del div */
+/* Esconder Scrollbar en Firefox */
+.gridReservas {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+/* Esconder Scrollbar en Chrome Safari y Opera */
+.gridReservas::-webkit-scrollbar {
+  display: none;
+}
+
+.reserva {
+  background-color: #29c3e5;
+  min-height: 140px;
+  max-height: 140px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  border: solid 1px black;
+}
+
+.reserva h2 {
+  text-align: center;
+}
+
+.reserva p,
+.reserva button {
+  display: inline-block;
+}
+
+.reserva p {
+  min-width: 70%;
+  max-width: 70%;
+  margin-left: 30px;
+}

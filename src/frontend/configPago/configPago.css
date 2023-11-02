@@ -1,0 +1,148 @@
+/* Acomodo en grid de la pagina */
+/* 5 Columnas para espaciar que no he buscado como cambiar el width de las columnas xd */
+.grid-cont {
+  display: grid;
+  grid-template-areas:
+    'titulo1  titulo2 titulo2 titulo2 titulo2'
+    'menu tarjeta1 tarjeta1 tarjeta2 tarjeta2'
+    'menu tarjeta3 tarjeta3 addTarjeta addTarjeta';
+
+  gap: 10px;
+  padding: 10px;
+}
+
+.gridTitulo1 {
+  grid-area: titulo1;
+  max-width: 30%;
+  margin-left: 20px;
+}
+
+.gridTitulo2 {
+  grid-area: titulo2;
+  max-width: 30%;
+  margin-left: 20%;
+}
+
+.gridMenu {
+  grid-area: menu;
+  max-width: 30%;
+  margin-left: 10px;
+}
+
+.gridTarjeta1 {
+  grid-area: tarjeta1;
+  width: 100%;
+}
+
+.gridTarjeta2 {
+  grid-area: tarjeta2;
+  width: 100%;
+}
+
+.gridTarjeta3 {
+  grid-area: tarjeta3;
+  width: 100%;
+}
+
+.gridBotonAdd {
+  grid-area: addTarjeta;
+  width: 100%;
+}
+
+/* Estilo caja contenedora */
+.caja {
+  margin: 120px 200px 120px 200px;
+  padding: 40px;
+  min-height: 64vh;
+  background-color: #fef3ec;
+  border: solid 1px black;
+}
+
+/* Clase de error cuando la informacion no es correcta */
+
+.error {
+  border: 2px solid #de3b40;
+}
+
+/* Fonts */
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  box-sizing: border-box;
+}
+
+/* Estilo Titulo */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Estilos Menu Navegacion */
+ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul li {
+  width: 200px;
+  list-style: none;
+  border-bottom: 2px solid black;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+/* Estilo tarjetas */
+.tarjeta {
+  width: 350px;
+  height: 175px;
+  border: 2px solid black;
+  background-color: #29c3e5;
+}
+
+.tarjeta > div {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  margin-top: 20%;
+  font-size: 20px;
+}
+
+.tarjeta h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tarjeta button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #e4bb97;
+  border: 1px solid black;
+}
+
+.tarjeta button:hover {
+  background-color: #de3b40;
+  font-style: italic;
+  cursor: pointer;
+}
+
+/* Estilo boton de agregar */
+
+.botonAdd button {
+  padding: 20px;
+  margin-top: 50px;
+  margin-left: 22%;
+
+  background-color: #29c3e5;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: large;
+  border: 1px solid black;
+}
+
+.botonAdd button:hover {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  background-color: #171a1f;
+  color: #ffffff;
+  cursor: pointer;
+}

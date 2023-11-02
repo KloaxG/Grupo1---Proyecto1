@@ -1,0 +1,271 @@
+/* Importar la fuente de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+/* HEADER */
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 30px;
+    background: #171A1F;
+    padding: 10px 0px;
+}
+
+nav .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icono h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+}
+
+nav img {
+    width: 60px;
+}
+
+nav div img {
+    display: flex;
+    width: 40px;
+    background-color: white;
+    border-radius: 100%;
+    padding: 3px;
+}
+
+/* MAIN */
+.contenedor {
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FEF3EC;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    color: #171A1F;
+    font-weight: 600;
+}
+
+.espacio {
+    margin-top: 20px;
+}
+
+/* Estilos de Barra de Navegación (#171A1F) */
+nav {
+    background-color: #171A1F;
+}
+
+/* Estilos de Botones y Opciones de Envío/Confirmación (#29C3E5) */
+button,
+input[type="submit"] {
+    background-color: #29C3E5;
+    color: #fff; /* Texto en color blanco para contraste */
+}
+
+/* Estilos para Márgenes y Rellenos de la Página (#F8F89FA) */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el Footer de la Aplicación (#FEF3EC) */
+footer {
+    background-color: #FEF3EC;
+}
+
+/* Estilos para Opciones Varias (sombreado o 'hover') (#E4BB97) */
+.elemento:hover {
+    background-color: #E4BB97;
+}
+
+/* Estilos para Texto General (Poppins ExtraLight 200) */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+/* Estilos para Títulos o Encabezados (Poppins SemiBold 600) */
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* Estilos para Texto en Botones (Hover) */
+button:hover,
+input[type="submit"]:hover {
+    font-style: italic;
+}
+
+/* Estilos para Colores de Alertas */
+.error {
+    color: #DE3B40;
+}
+
+.informacion {
+    color: #EFB034;
+}
+
+.exito {
+    color: #1DD75B;
+}
+
+.alerta {
+    color: #379AE6;
+}
+
+/* Estilos adicionales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor_general {
+    margin: auto;
+    width: 960px;
+    height: 800px;
+    background-color: #f8f9fa;
+}
+
+.contenedor-derecho {
+    float: right;
+    width: 400px;
+    height: 00px;
+    margin-bottom: 300px;
+}
+
+.contenedor-1 {
+    width: 500px;
+    height: 150px;
+    background-color: #f8f9fa;
+}
+
+.contenedor-2 {
+    margin-top: 20px;
+    text-align: left;
+    width: 500px;
+    height: 500px;
+    background-color: #f8f9fa;
+}
+
+/* Estilos para los campos de entrada */
+#numero_tarjeta {
+    width: 300px;
+}
+
+#nombre_titular {
+    width: 305px;
+}
+
+#fecha_expiracion {
+    width: 55px;
+}
+
+#cvv {
+    width: 100px;
+}
+
+#ninos {
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+#adultos {
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+#fecha {
+    width: 110px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+/* Estilos para el contenedor de la imagen y el texto */
+.contenedor-derecho {
+    text-align: center;
+}
+
+.contenedor-derecho .imagen-hotel {
+    margin-top: 10px;
+}
+
+/* Estilos para la imagen */
+.contenedor-derecho .imagen-hotel img {
+    width: 250px;
+    height: auto;
+}
+
+/* Estilo para el desglose de pago */
+.contenedor-desglose {
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.contenedor-desglose h3 {
+    font-size: 24px;
+}
+
+.contenedor-desglose ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contenedor-desglose ul li {
+    margin: 5px 0;
+}
+
+.contenedor-desglose ul li span {
+    font-weight: bold;
+}
+
+.contenedor-desglose p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.contenedor-desglose p span {
+    font-weight: bold;
+    color: #FF5733;
+}

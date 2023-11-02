@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuracion de Usuario</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/configNegocio.css" />
+    <link rel="stylesheet" href="../css/headerFooter.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,200;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome link -->
+    <script
+      src="https://kit.fontawesome.com/045b9380cb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="icono">
+          <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+          <h1>SyncTravel</h1>
+        </div>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+        </ul>
+        <div>
+          <a href="../html/configUsuario.html"
+            ><img src="../assets/icono-perfil.png" alt="Perfil de usuario"
+          /></a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="configPago" class="grid-cont caja">
+      <!-- Titulo Pagina -->
+      <div class="gridTitulo1">
+        <h2>Configuracion de Cuenta</h2>
+      </div>
+
+      <div class="gridTitulo2">
+        <h2>Informacion de Negocio</h2>
+      </div>
+
+      <!-- Menu Navegacion -->
+      <div class="gridMenu" id="menu">
+        <ul>
+          <li><a href="../html/configUsuario.html">Informacion Personal</a></li>
+          <li><a href="#">Informacion de Negocio</a></li>
+          <li><a href="../html/configPago.html">Metodos de Pago</a></li>
+          <li><a href="../html/historial.html">Historial de Reservas</a></li>
+        </ul>
+      </div>
+
+      <!-- Informacion Negocio -->
+      <div class="gridFotos rel-cont">
+        <img src="../assets/foto1.jpg" alt="Foto1" />
+        <img src="../assets/foto2.jpg" alt="Foto2" />
+        <img src="../assets/foto3.jpeg" alt="Foto3" />
+        <button id="botonEditarFotos">Editar</button>
+      </div>
+
+      <div id="infoNombre">
+        <label for="nombre" id="labelNombre">Nombre</label>
+        <p id="nombre">McDonalds</p>
+        <!-- <input type="text" id="direccion" /> -->
+
+        <!-- Boton, con JS, cambia el espacio superior de un <textarea> a un form, y a el mismo a un submit, para cambiar la informacion -->
+        <button><i class="fa-solid fa-pencil"></i></button>
+      </div>
+
+      <div id="infoNumero">
+        <label for="numero" id="labelNumero">Numero de Contacto</label>
+        <p id="numero">2256 2222</p>
+        <!-- <input type="number" id="numero" /> -->
+
+        <button><i class="fa-solid fa-pencil"></i></button>
+      </div>
+
+      <div id="infoDireccion">
+        <label for="direccion" id="labelDireccion">Direccion</label>
+        <textarea readonly id="direccion">Fuente de la Hispanidad</textarea>
+        <!-- <input type="text" id="direccion" /> -->
+
+        <button><i class="fa-solid fa-pencil"></i></button>
+      </div>
+
+      <div id="infoDescripcion">
+        <label for="descripcion" id="labelDescripcion">Descripcion</label>
+        <textarea readonly id="descripcion">
+Om nom mcdonalds para pa pa paaaa
+        </textarea>
+        <!-- <input type="text" id="direccion" /> -->
+
+        <button><i class="fa-solid fa-pencil"></i></button>
+      </div>
+
+      <div id="infoCategorias">
+        <p>Categorias</p>
+
+        <input type="checkbox" id="hospedaje" />
+        <label class="form-control" for="hospedaje" id="labelhospedaje"
+          >Hospedaje</label
+        >
+
+        <input type="checkbox" id="entretenimiento" />
+        <label for="entretenimiento" id="labelEntretenimiento"
+          >Entretenimiento</label
+        >
+
+        <input type="checkbox" id="alimentacion" />
+        <label for="alimentacion" id="labelAlimentacion">Alimentacion</label>
+
+        <input type="checkbox" id="Transporte" />
+        <label for="Transporte" id="labelTransporte">Transporte</label>
+      </div>
+
+      <div class="gridBoton">
+        <!-- onsubmit, revisar informacion en checkboxes y actualizar en BD -->
+        <button class="btn" type="submit" onsubmit="">
+          Guardar categorias
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer">
+        <p>
+          &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

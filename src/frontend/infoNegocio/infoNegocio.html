@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Información del Negocio</title>
+  <link rel="stylesheet" href="../infoNegocio/infoNegocio.css" />
+  <link rel="icon" type="icon" href="../assets/favicon.png" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="icono">
+        <img src="/src/frontend/assets/favicon.png" alt="Logo SyncTravel" />
+        <h1>SyncTravel</h1>
+      </div>
+      <div>
+        <ul>
+          <li><a href="../index/index.html">Inicio</a></li>
+        </ul>
+      </div>
+      <div>
+        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+            alt="Perfil de usuario" /></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="contenedor">
+      <aside>
+        <ul>
+          <li><i class="fa-solid fa-circle-user"></i><a href="../configUsuario/configUsuario.html">Información Personal</a></li>
+          <li><i class="fa-solid fa-money-check-dollar"></i><a href="#">Pago</a></li>
+          <li><i class="fa-solid fa-lock"></i><a href="../">Seguridad</a></li>
+          <li><i class="fa-solid fa-envelope"></i><a href="#">Correo</a></li>
+          <li><i class="fa-solid fa-clock-rotate-left"></i><a href="../historial/historial.html">Historial</a></li>
+          <li><i class="fa-solid fa-business-time"></i><a href="../infoNegocio/infoNegocio.html">Negocio</a></li>
+        </ul>
+      </aside>
+      <section class="main-info">
+        <h1> Información del Negocio</h1>
+        <div class="contenedor-lista">
+          <img src="../assets/Negocio 1.jpg" alt="Foto 1">
+          <img src="../assets/Negocio 2.jpg" alt="Foto 2">
+          <img src="../assets/Negocio 3.jpg" alt="Foto 3">
+          <button id="botonEditarFoto">
+            <i class="fa-solid fa-pencil"></i>
+          </button>
+        </div>
+        <form action="" method="id=" form">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre del negocio." />
+          </div>
+          <div>
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" placeholder="Contacto del negocio.">
+          </div>
+          <div>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Dirección del negocio.">
+          </div>
+          <div>
+            <label for="descripcion">Descripción:</label>
+            <textarea name="descripcion" id="descripcion" min-maxlength="30" rows="5" placeholder="Ingrese la descripción de su negocio."></textarea>
+          </div>
+          <!-- <button type="Enviar" id="Enviar">Enviar</button> -->
+          <p class="warnings" id="warnings"></p>
+        </form>
+    </div>
+    </div>
+    </section>
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+      <p>
+        &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
+      </p>
+    </div>
+  </footer>
+  <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

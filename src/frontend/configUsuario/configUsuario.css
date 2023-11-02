@@ -1,0 +1,240 @@
+/* Acomodo en grid de la pagina */
+/* 5 Columnas para espaciar que no he buscado como cambiar el width de las columnas xd */
+.grid-cont {
+  display: grid;
+  grid-template-areas:
+    'titulo  fotoPerfil1 fotoPerfil2 fotoPerfil2 fotoPerfil2'
+    'menu info info info info'
+    'menu cambioPW1 cambioPW1 cambioPW1 cambioPW2';
+
+  gap: 10px;
+  padding: 10px;
+}
+
+.gridTitulo {
+  grid-area: titulo;
+  max-width: 30%;
+  margin-left: 20px;
+}
+
+.gridMenu {
+  grid-area: menu;
+  max-width: 30%;
+  margin-left: 10px;
+}
+
+.gridFotoPerfil {
+  grid-area: fotoPerfil1;
+}
+
+.gridInfo {
+  grid-area: info;
+}
+
+.gridPW {
+  grid-area: cambioPW2;
+}
+
+/* Estilo caja contenedora */
+.caja {
+  margin: 120px 200px 120px 200px;
+  padding: 40px;
+  min-height: 64vh;
+  background-color: #fef3ec;
+  border: solid 1px black;
+}
+
+/* Estilo lapices */
+i {
+  color: #171a1f;
+}
+
+.error {
+  border: 2px solid #de3b40;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  color: #de3b40;
+}
+
+.showExito {
+  color: #1dd75b;
+}
+
+/* Fonts */
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  box-sizing: border-box;
+}
+
+/* Estilo Titulo */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* Estilos Menu Navegacion */
+.gridMenu ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.gridMenu ul li {
+  width: 200px;
+  list-style: none;
+  border-bottom: 2px solid black;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+nav ul li {
+
+  list-style: none;
+}
+
+nav ul .nav-principal a {
+  font-weight: 600;
+}
+
+nav ul .nav-principal a:hover {
+  color: #E4BB97;
+  transition: 0.3s;
+}
+
+/* Estilos Foto Perfil */
+#fotoPerfil {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #29c3e5;
+  border: 1px solid black;
+}
+
+#fotoPerfil img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+#botonEditarFoto {
+  /* Poner boton en la foto y moverlo */
+  position: absolute;
+  bottom: 5px;
+  left: 65%;
+
+  /* Estilo boton */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e4bb97;
+  border: 1px solid black;
+}
+
+#botonEditarFoto:hover {
+  background-color: #efb034;
+  cursor: pointer;
+}
+
+.rel-cont {
+  /* Necesario para el Pos Abs y poner el boton donde va */
+  position: relative;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* Estilos informacion de cuenta */
+
+#infoNombre,
+#infoCorreo,
+#infoDireccion {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+#labelNombre {
+  margin-right: 86.45px;
+}
+
+#labelCorreo {
+  margin-right: 5.13px;
+}
+
+#labelDireccion {
+  margin-right: 76.25px;
+}
+
+#nombre,
+#correo,
+#direccion {
+  border-bottom: 2px solid black;
+  width: 300px;
+}
+
+textarea {
+  height: fit-content;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: #fef3ec;
+}
+
+#infoNombre button,
+#infoCorreo button,
+#infoDireccion button {
+  max-height: 30px;
+  width: 40px;
+  min-width: fit-content;
+
+  border-radius: 7px;
+  background-color: #e4bb97;
+  border: 1px solid black;
+}
+
+#infoNombre button:hover,
+#infoCorreo button:hover,
+#infoDireccion button:hover {
+  background-color: #efb034;
+  cursor: pointer;
+}
+
+#inputNombre,
+#inputCorreo,
+#inputDir {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 300px;
+  background-color: #fef3ec;
+}
+
+#guardarNombre,
+#guardarCorreo,
+#guardarDir {
+  padding: 0 5px 2px 5px;
+}
+
+/* Estilo Boton Cambio PW */
+#botonPW {
+  background-color: #29c3e5;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: large;
+  border: 1px solid black;
+}
+
+#botonPW:hover {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  background-color: #171a1f;
+  color: #ffffff;
+}

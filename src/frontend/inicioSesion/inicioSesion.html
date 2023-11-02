@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SyncTravel - Ingresar</title>
+  <link rel="stylesheet" href="../inicioSesion/inicioSesion.css" />
+  <link rel="icon" type="icon" href="../assets/favicon.png" />
+</head>
+
+<header>
+  <nav>
+    <div class="icono">
+      <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+      <h1>SyncTravel</h1>
+    </div>
+    <ul>
+      <li><a href="../index/index.html">Inicio</a></li>
+    </ul>
+    <div>
+      <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png" alt="Perfil de usuario" /></a>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+  <main>
+    <section class="contenedor">
+      <div class="image">
+        <img src="../assets/imagen-cr.jpg" alt="imagen-principal">
+      </div>
+      <div class="formulario">
+        <form id="formulario">
+          <span>
+            <h1>Bienvenido</h1>
+            <p>Inicia sesión con tu cuenta</p>
+          </span>
+          <div>
+            <label for="username">Usuario o email:</label>
+            <input type="text" id="username" name="username" placeholder="Ingrese" title="Minimo 4 digitos" required pattern="^(?:[a-zA-Z0-9]{4,}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$
+            " >
+          </div>
+          <div>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required placeholder="Ingrese contraseña" pattern=""
+            title="">
+            
+          </div>
+          <button type="submit" value="Login">Ingresar</button>
+          <div class="password_olvidada"><a href="#">¿Olvidaste tu contraseña?</a> <br>
+            <a href="../registroUsuario/registroUsuario.html"> Crear cuenta</a>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+  </main>
+
+</body>
+<footer>
+  <div class="footer">
+    <p>
+      &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
+    </p>
+  </div>
+</footer>
+
+</html>

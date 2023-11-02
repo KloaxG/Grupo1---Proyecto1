@@ -1,0 +1,268 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+
+/* RESET: Estilos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+}
+
+/* HEADER: Cabecera y barra de navegación */
+nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 30px;
+    background: #171A1F;
+    padding: 10px 0px;
+    
+}
+
+nav .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icono h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+}
+
+nav img {
+    width: 60px;
+}
+
+nav div img {
+    display: flex;
+    width: 40px;
+    background-color: white;
+    border-radius: 100%;
+    padding: 3px;
+}
+
+/* MAIN: Contenido principal */
+.contenedor {
+    padding: 20px 0px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+}
+
+/* FOOTER: Pie de página */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FEF3EC;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    color: #171A1F;
+    font-weight: 600;
+}
+
+/* Espaciado */
+.espacio {
+    margin-top: 20px;
+}
+
+/* Estilos generales */
+body {
+    background-color: #f8f9fa;
+    font-weight: 200;
+}
+
+/* Estilos de botones y opciones de envío/confirmación */
+button, input[type="submit"] {
+    background-color: #29C3E5;
+    color: #fff; /* Texto en color blanco para contraste */
+}
+
+/* Estilos de barra de navegación */
+nav {
+    background-color: #171A1F;
+}
+
+/* Estilos para el hover de elementos */
+.elemento:hover {
+    background-color: #E4BB97;
+}
+
+/* Estilos para títulos o encabezados */
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* Estilos para el hover de botones */
+button:hover, input[type="submit"]:hover {
+    font-style: italic;
+}
+
+/* Estilos para colores de alertas */
+.error {
+    color: #DE3B40;
+}
+
+.informacion {
+    color: #EFB034;
+}
+
+.exito {
+    color: #1DD75B;
+}
+
+.alerta {
+    color: #379AE6;
+}
+
+/* Estilos para la página principal */
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.izquierda {
+    margin-top: 60px;
+    margin-left: 10px;
+    width: 20%;
+}
+
+.centro {
+    margin-top: 60px;
+    margin-right: 100px;
+    width: 80%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+
+i {
+    margin-right: 10px;
+}
+
+.icono-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.icono {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h3 {
+    margin: 0;
+}
+
+/* Estilos para la página principal */
+.espacio {
+  height: 20px;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.izquierda, .centro {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Estilos para el historial */
+.historial {
+    padding: 5px;
+    margin: 10px;
+}
+
+.contenedor-historial {
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    justify-content: space-between;
+    background-color: #E4BB97;
+}
+
+.imagen-historial img {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-left: 80px;
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.informacion-historial {
+    flex: 3;
+}
+
+.titulo {
+    font-weight: bold;
+}
+
+.detalle {
+    margin: 10px;
+}
+
+.punto {
+    margin-left: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+.icono {
+    width: 32px;
+    height: 32px;
+}
+
+/* Estilos para el botón "Recomendar" */
+button[type="submit"] {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
