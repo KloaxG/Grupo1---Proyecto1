@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SyncTravel - Confirmación y Pago</title>
     <!-- Enlaces a archivos externos -->
-    <link rel="stylesheet" href="../pago/pago.css" /> 
+    <link rel="stylesheet" href="../pago/pago.css" />
     <link rel="icon" type="icon" href="../assets/favicon.png">
 
 </head>
+
 <body>
     <header>
         <nav>
@@ -20,16 +22,17 @@
                 <li><a href="../index/index.html">Inicio</a></li>
             </ul>
             <div>
-                <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png" alt="Perfil de usuario" /></a>
+                <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+                        alt="Perfil de usuario" /></a>
             </div>
         </nav>
     </header>
-    
+
     <div class="espacio"></div>
     <h1>Confirmación y Pago</h1>
     <br>
     <div class="espacio"></div>
-    
+
     <div class="contenedor_general">
         <div class="contenedor-1">
             <div class="contenedor">
@@ -47,7 +50,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="contenedor-derecho">
             <div class="info-container">
                 <div class="hotel-name">
@@ -68,7 +71,7 @@
             <div class="imagen-hotel">
                 <img src="../assets/BSJOS_POOL_28.jpg" alt="Imagen del hotel">
             </div>
-            
+
             <!-- Agrega el desglose de pago aquí -->
             <div class="contenedor-desglose">
                 <h3 class="el-h3">Desglose de Pago</h3>
@@ -80,7 +83,7 @@
                 <p>Total: <span id="total">Insertar total aquí</span></p>
             </div>
         </div>
-        
+
         <div class="contenedor-2">
             <div class="metodo-pago-container">
                 <h3 class="mi-h3">Método de Pago</h3>
@@ -94,12 +97,12 @@
                     <label for="numero_tarjeta">Número de Tarjeta:</label>
                     <input type="text" id="numero_tarjeta" name="numero_tarjeta">
                 </div>
-                
+
                 <div>
                     <label for="nombre_titular">Nombre del Titular:</label>
                     <input type="text" id="nombre_titular" name="nombre_titular">
                 </div>
-                
+
                 <div>
                     <label for="fecha_expiracion">Fecha de Expiración:</label>
                     <input type="text" id="fecha_expiracion" name="fecha_expiracion" placeholder="MM/AA">
@@ -112,22 +115,23 @@
                     <input type="checkbox" id="guardar_tarjeta" name="guardar_tarjeta">
                     <label for="guardar_tarjeta">Guardar mi tarjeta para futuras reservas</label>
                 </div>
-                
+
                 <div class="espacio"></div>
-                
+
                 <div>
                     <button type="button" onclick="validarPago()">Pagar Ahora</button>
                 </div>
-                
+
                 <div class="espacio"></div>
             </div>
         </div>
-        <script src="../js/validaciones.js"></script>
-    <footer>
-        <div class="footer">
-            <p>
-                &copy; 2023 SyncTravel Company Inc. | Privacidad | Todos los derechos reservados
-            </p>
-        </div>
-    </footer>
-    </html>
+        <script src="../validaciones.js"></script>
+        <footer>
+            <div class="footer">
+                <p>
+                    &copy; 2023 SyncTravel Company Inc. | Privacidad | Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+
+</html>

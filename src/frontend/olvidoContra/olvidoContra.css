@@ -10,7 +10,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
-    gap: 30px;
+    gap: 15px;
     background: #171A1F;
     padding: 10px 0px;
 }
@@ -32,7 +32,8 @@ nav .icono{
 nav ul li {
     list-style: none;
 }
-nav ul li a{
+
+nav ul li a {
     font-weight: 600;
 }
 
@@ -52,93 +53,69 @@ nav img {
     width: 60px;
 }
 
-
 nav div img {
     display: flex;
     width: 40px;
-    background-color: white;
+    background-color: rgb(246, 241, 241);
     border-radius: 100%;
     padding: 3px;
 }
-.register{
-    padding-top: 20px;
+
+/* MAIN */
+
+main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 88vh;
 }
 
-.register button{
-    margin-top: 15px;
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    width: 1000px;
+    height: 600px;
+    background: #FEF3EC;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+form label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #171A1F;
+}
+
+form input {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #171A1F;
+    padding: 0px 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+form button{
     border: #171A1F 1px solid;
-    width: 40%;
+    width: 20%;
     height: 40px;
     background: #29C3E5;
     font-weight: 400;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.register button:hover{
-    background: #171A1F;
-    color: white;
-    transition: 0.3s;
-}
-
-/* MAIN */
-
-main{
-    display: grid;
-    place-items: center;
-    grid-template-columns: 35% 65%;
-}
-
-main aside img{
-    width: 72vh;
-    height: 88vh;
-    
-}
-
-.logo span{ 
-    color: #29c3e5;
-}
-section{
-    display:flex;
-    flex-direction: column;
-    padding-left: 150px;
-    gap: 40px;
-    margin: 0px auto;
-}
-section form{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-section form .grid{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-section form .grid div{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-section form .grid div label{
+    font-size: 15px;
+    color: #171A1F;
     font-weight: 400;
+
+
 }
-section form .grid div input{
-    width: 60%;
-    height: 40px;
-    border: #171A1F 1px solid;
-    border-radius: 5px;
-    padding: 0px 10px;
-    font-weight: 400;
-}
-section form .grid div input:focus{
-    outline: none;
-    border: #29C3E5 1px solid;
-    
-}
+
+
 
 
 

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+
+}
+
+
+/* NAV LATERAL */
+nav {
+    min-height: 100vh;
+    width: 20%;
+    border-right: 1px solid black;
+}
+
+nav ul {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+nav ul li {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul li a span {
+    color: #29C3E5;
+    padding-right: 30px;;
+}
+
+nav ul li a:hover {
+    background: #f0f0f0;
+    transition: all 0.5s ease;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    padding: 30px 80px;
+    transition: 0.3s;
+}
+
+.contenedor {
+    display: flex;
+
+}
+
+
+
+.contenido {
+    flex: 1;
+}
+
+
+.contenido header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    padding: 20px 40px;
+    background: #171A1F;
+    color: white;
+
+}
+
+.contenido header h1 {
+    display: grid;
+    justify-content: center;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-style: italic;
+
+
+}
+
+.contenido header div {
+    display: grid;
+    justify-content: flex-end;
+}
+
+.contenido header a {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+
+.contenido header a img {
+    width: 40px;
+}
+
+
+/* ---MAIN--- */
+.main {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+
+}
+
+.main span {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 100px;
+    padding-bottom: 80px;
+    
+}
+
+.main span .usuarios, .negocios{
+    border: #171A1F 1px solid;
+    background: #29C3E5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.main span .usuarios h3, .negocios h3{
+    color: white;
+    font-size: 30px;
+    
+    
+
+}
+
+.main div table{
+    border-collapse: collapse;
+    border: #171A1F 1px solid;
+    width: 100%;
+    color: #171A1F;
+    font-size: 15px;
+    
+    
+
+}
+.main div table .top{
+    background: #f0f0f0;
+    
+
+}
+
+.main div table tr {
+    background: #aedce7;
+    border: #171A1F 1px solid;
+    font-size: 20px; 
+
+}
+.main div table tr th{
+    
+    color: #171A1F;
+    font-size: 20px;
+    padding: 10px;
+    border: #171A1F 1px solid;
+    font-weight: 600;
+}
+
+
+
+/* 
+.tabla{
+    padding-left: 25%;
+    padding-top: 10%;
+} */
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #171A1F;
+    background: #FEF3EC;
+    padding: 20px 0px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
+
+.footer {
+    color: #171A1F;
+    font-weight: 600;
+}
