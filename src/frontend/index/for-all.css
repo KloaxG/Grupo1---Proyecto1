@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 /* RESET */
 * {
   margin: 0;
@@ -10,7 +10,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
-  gap: 30px;
+  gap: 15px;
   background: #171a1f;
   padding: 10px 0px;
 }
@@ -33,20 +33,25 @@ nav ul li {
   list-style: none;
 }
 
+nav ul li a {
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #e4bb97;
+  transition: 0.3s;
+}
+
 nav a {
   text-decoration: none;
   color: white;
-  font-weight: 200;
-}
-
-nav img {
-  width: 60px;
+  font-weight: 400;
 }
 
 nav div img {
   display: flex;
   width: 40px;
-  background-color: white;
+  background-color: rgb(246, 241, 241);
   border-radius: 100%;
   padding: 3px;
 }

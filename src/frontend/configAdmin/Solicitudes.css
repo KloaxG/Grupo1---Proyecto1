@@ -9,7 +9,6 @@
 }
 
 
-
 /* NAV LATERAL */
 nav {
     min-height: 100vh;
@@ -107,10 +106,19 @@ nav ul li a:hover {
 
 /* ---MAIN--- */
 .main {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 60px;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
 
+}
+.main h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #171A1F;
+    text-align: center;
+    padding-bottom: 50px;
 }
 
 .main span {
@@ -121,11 +129,6 @@ nav ul li a:hover {
     gap: 100px;
     padding-bottom: 80px;
     
-}
-
-.main span {
-    display: flex;
-    flex-direction: column;
 }
 
 .main span .usuarios, .negocios{
@@ -140,49 +143,35 @@ nav ul li a:hover {
 
 .main span .usuarios h3, .negocios h3{
     color: white;
-    font-size: 20px;
-}
-.grafico{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding-bottom: 100px;
-
-}
-
-.grafico div{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 200px;
+    font-size: 30px;
     
     
 
 }
 
-.tabla{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.main div table{
+    border-collapse: collapse;
+    border: #171A1F 1px solid;
+    width: 100%;
+    color: #171A1F;
+    font-size: 15px;
+    
     
 
 }
-
-
-.ult-reportes table .top{
+.main div table .top{
     background: #f0f0f0;
     
 
 }
 
-.ult-reportes table tr {
+.main div table tr {
     background: #aedce7;
     border: #171A1F 1px solid;
     font-size: 20px; 
 
 }
-.ult-reportes table tr th{
+.main div table tr th{
     
     color: #171A1F;
     font-size: 20px;
@@ -193,6 +182,11 @@ nav ul li a:hover {
 
 
 
+/* 
+.tabla{
+    padding-left: 25%;
+    padding-top: 10%;
+} */
 
 /* FOOTER */
 footer {

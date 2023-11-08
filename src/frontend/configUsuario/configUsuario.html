@@ -1,157 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configuracion de Usuario</title>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="../configUsuario/configUsuario.css" />
-    <link rel="stylesheet" href="../configUsuario/headerFooter.css" />
-    <link rel="icon" type="icon" href="../assets/favicon.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuración de Usuario</title>
+  <link rel="stylesheet" href="../configUsuario/configUsuario.css" />
+  <link rel="stylesheet" href="../index/for-all.css" />
+  <link rel="icon" type="icon" href="../assets/favicon.png">
 
+</head>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,200;1,600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- FontAwesome link -->
-    <script
-      src="https://kit.fontawesome.com/045b9380cb.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script defer src="../configUsuario/configUsuario.js"></script>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <nav>
-        <div class="icono">
-          <img src="../assets/favicon.png" alt="Logo SyncTravel" />
-          <h1>SyncTravel</h1>
-        </div>
-        <ul>
-          <li class="nav-principal"><a href="../index/index.html">Inicio</a></li>
-        </ul>
-        <div>
-          <a href="../configUsuario/configUsuario.html"
-            ><img src="../assets/icono-perfil.png" alt="Perfil de usuario"
-          /></a>
-        </div>
-      </nav>
-    </header>
-
-    <main id="configUsuario" class="grid-cont caja">
-      <!-- Titulo Pagina -->
-      <div class="gridTitulo">
-        <h2>Configuracion de Cuenta</h2>
+<body>
+  <header>
+    <nav>
+      <div class="icono">
+        <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+        <h1>SyncTravel</h1>
       </div>
+      <ul>
+        <li class="nav-principal"><a href="../index/index.html">Inicio</a></li>
+      </ul>
+      <div>
+        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+            alt="Perfil de usuario" /></a>
+      </div>
+    </nav>
+  </header>
 
-      <!-- Menu Navegacion -->
-      <div class="gridMenu" id="menu">
-        <ul>
-          <li><a href="../configUsuario/configUsuario.html">Informacion Personal</a></li>
-          <li>
-            <a href="../configNegocio/configNegocio.html">Informacion de Negocio</a>
+  <main>
+    <div class="contenedor">
+      <section class="left">
+        <div class="left-top">
+          <h2>
+            <a href="">
+              <h2>
+                < Volver</h2>
+            </a>
+            <h1>Configuración de Cuenta</h1>
+        </div>
+        <div class="nav-cuenta">
+          <li><i class="fa-solid fa-user"></i><a href="../configUsuario/configUsuario.html">Información Personal</a>
           </li>
-          <li><a href="../configPago/configPago.html">Metodos de Pago</a></li>
-          <li><a href="../historial/historial.html">Historial de Reservas</a></li>
-        </ul>
-      </div>
+          <li><i class="fa-solid fa-lock"></i><a href="../configSeguridad/cambioContra.html">Seguridad</a></li>
+          <li><i class="fa-solid fa-briefcase"></i><a href="../configNegocio/configNegocio.html">Información de
+              Negocio</a></li>
+          <li><i class="fa-regular fa-credit-card"></i><a href="../configPago/configPago.html">Metodos de Pago</a></li>
+          <li><i class="fa-solid fa-book-open"></i><a href="../historial/historial.html">Historial de Reservas</a></li>
+        </div>
+      </section>
 
-      <!-- Foto de Perfil -->
-      <div class="gridFotoPerfil">
-        <div id="fotoPerfil" class="rel-cont">
-          <img src="../assets/favicon.png" alt="Foto de Perfil" />
-          <form action="">
-            
-          <button id="botonEditarFoto">
-            <i class="fa-solid fa-pencil"></i>
-          </button>
+      <section class="right">
+        <div class="icon-img">
+          <div>
+            <span class="span-flex">
+              <img src="../assets/icono-perfil.png" alt="Foto de Perfil" />
+              <button>
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </span>
+            <p></p>
+          </div>
+        </div>
+        <form class="form-usuario">
+          <div class="flex-opciones">
+            <label for="nombre" id="labelNombre">Nombre Completo</label>
+            <span>
+              <input type="text">
+              <button>
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </span>
+          </div>
+          <hr>
+          <div class="flex-opciones">
+            <label for="correo">Correo</label>
+            <span>
+              <input type="text" />
+              <button>
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </span>
+          </div>
+          <hr>
+          <div class="flex-opciones">
+            <label for="direccion">Dirección</label>
+            <span>
+              <textarea name="direccion" id="" cols="60" rows="3"></textarea>
+              <button>
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </span>
+          </div>
+          <hr>
+          <div class="flex-opciones">
+            <label for="nombre" id="labelNombre">Número telefónico</label>
+            <span>
+              <input type="text">
+              <button>
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </span>
+          </div>
+          <hr>
         </form>
-        </div>
-      </div>
+      </section>
+    </div>
+  </main>
 
-      <!-- Informacion de Cuenta -->
-      <div class="gridInfo" id="informacion">
-        <div id="infoNombre">
-          <label for="nombre" id="labelNombre">Nombre</label>
-          <p id="nombre">John Doe</p>
-          <!-- <input type="text" id="nombre" /> -->
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+      <p>
+        &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
+      </p>
+    </div>
+  </footer>
+  <!-- FIN FOOTER -->
+  <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
+  <script src="../configUsuario/configUsuario.js"></script>
+</body>
 
-          <!-- Boton, con JS, cambia el espacio superior de un <p> a un form, y a el mismo a un submit, para cambiar la informacion -->
-          <form id="formNombre" class="hide" action="">
-            <input type="text" id="inputNombre" />
-            <button id="guardarNombre" type="submit">Guardar</button>
-          </form>
-          <p id="errorNombre" class="hide">Ingrese su nombre</p>
-
-          <!-- Boton que cambia los espacios -->
-          <button onmouseup="editarNombre()" id="botonNombre">
-            <i class="fa-solid fa-pencil"></i>
-          </button>
-        </div>
-
-        <br />
-
-        <div id="infoCorreo">
-          <label for="correo" id="labelCorreo">Correo Electronico</label>
-          <p id="correo">doe@john.com</p>
-          <!-- <input type="email" id="correo" /> -->
-
-          <!-- Boton, con JS, cambia el espacio superior de un <p> a un form, y a el mismo a un submit, para cambiar la informacion -->
-          <form id="formCorreo" class="hide" action="">
-            <input type="text" id="inputCorreo" />
-            <button id="guardarCorreo" type="submit">Guardar</button>
-          </form>
-          <p id="errorCorreo" class="hide">Ingrese un correo valido</p>
-
-          <!-- Boton que cambia los espacios -->
-          <button id="botonCorreo" onmouseup="editarCorreo()">
-            <i class="fa-solid fa-pencil"></i>
-          </button>
-        </div>
-
-        <br />
-
-        <div id="infoDireccion">
-          <label for="direccion" id="labelDireccion">Direccion</label>
-          <textarea readonly id="direccion">Calle Siempreviva</textarea>
-          <!-- <input type="text" id="direccion" /> -->
-
-          <!-- Boton, con JS, cambia el espacio superior de un <textarea> a un form, y a el mismo a un submit, para cambiar la informacion -->
-          <form id="formDir" class="hide" action="">
-            <textarea id="inputDir"></textarea>
-            <button id="guardarDir" type="submit">Guardar</button>
-          </form>
-          <p id="errorDir" class="hide">Ingrese una direccion</p>
-
-          <button id="botonDir" onmouseup="editarDir()">
-            <i class="fa-solid fa-pencil"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="gridPW" id="cambioPW">
-        <a href="../cambioContra/cambioContra.html"
-          ><button id="botonPW">Cambiar contraseña</button></a
-        >
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer">
-        <p>
-          &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
-        </p>
-      </div>
-    </footer>
-  </body>
 </html>

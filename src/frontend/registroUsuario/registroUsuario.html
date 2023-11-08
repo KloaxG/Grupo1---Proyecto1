@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SyncTravel - Nuevo Usuario</title>
+  <title>Nuevo Usuario</title>
   <link rel="stylesheet" href="../registroUsuario/registroUsuario.css" />
   <link rel="icon" type="icon" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../index/for-all.css" />
 </head>
 
 <body>
@@ -25,6 +26,7 @@
       </div>
     </nav>
   </header>
+  <!-- INICIO MAIN-->
   <main>
     <aside>
       <img src="../assets/imagen.png" alt="imagen aside habitacion">
@@ -33,7 +35,7 @@
       <div>
         <h2 class="logo"> Registro de <span>usuario</span></h2>
       </div>
-      <form>
+      <form id="formReg">
         <div class="grid">
           <div>
             <label for="name">Nombre</label>
@@ -84,13 +86,14 @@
             <input type="checkbox" required>
             <label>Al registrarme, acepto los Términos de uso y la <br> Política de privacidad.</label>
           </div>
-          <button>Crear cuenta</button>
+          <button type="submit" form="formReg" id="botonLogin">Crear cuenta</button>
         </div>
       </form>
       </div>
     </section>
     <br />
   </main>
+  <!-- FIN MAIN -->
   <footer>
     <div class="footer">
       <p>
@@ -98,6 +101,7 @@
       </p>
     </div>
   </footer>
+  <script src="./registroUsuario.js"></script>
 </body>
 
 </html>

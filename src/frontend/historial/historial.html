@@ -5,17 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuracion de Usuario</title>
-  <!-- Estilos -->
+  <title>Historial</title>
+  <link rel="icon" href="../assets/favicon.png" >
   <link rel="stylesheet" href="../historial/historial.css" />
-  <link rel="stylesheet" href="../configUsuario/headerFooter.css" />
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,200;1,600&display=swap"
-    rel="stylesheet" />
-  <!-- FontAwesome link -->
-  <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../index/for-all.css" />
+
 </head>
 
 <body>
@@ -35,51 +29,98 @@
       </div>
     </nav>
   </header>
-  <main id="configPago" class="grid-cont caja">
-    <!-- Titulo Pagina -->
-    <div class="gridTitulo1">
-      <h2>Configuracion de Cuenta</h2>
-    </div>
-    <div class="gridTitulo2">
-      <h2>Historial de Reservas</h2>
-    </div>
-    <!-- Menu Navegacion -->
-    <div class="gridMenu" id="menu">
-      <ul>
-        <li><a href="../configUsuario/configUsuario.html">Informacion Personal</a></li>
-        <li>
-          <a href="../configNegocio/configNegocio.html">Informacion de Negocio</a>
-        </li>
-        <li><a href="../configPago/configPago.html">Metodos de Pago</a></li>
-        <li><a href="#">Historial de Reservas</a></li>
-      </ul>
-    </div>
-    <!-- Reservas -->
-    <div class="gridReservas" id="listaReservas">
-      <div class="reserva">
-        <h2>Reserva pendiente</h2>
-        <p>Informacion reserva, donde es, a que hora, tipo de servicio</p>
-        <button class="btn">Recomendar</button>
-        <button class="btnCancel">Cancelar</button>
-      </div>
-      <div class="reserva">
-        <h2>Reserva anterior</h2>
-        <p>Informacion reserva, donde es, a que hora, tipo de servicio</p>
-        <button class="btn">Recomendar</button>
-      </div>
-      <div class="reserva">
-        <h2>Reserva anterior</h2>
-        <p>Informacion reserva, donde es, a que hora, tipo de servicio</p>
-        <button class="btn">Recomendar</button>
-      </div>
-      <div class="reserva">
-        <h2>Reserva anterior</h2>
-        <p>Informacion reserva, donde es, a que hora, tipo de servicio</p>
-        <button class="btn">Recomendar</button>
-      </div>
-    </div>
+  <main>
+    <div class="contenedor">
+      <section class="left">
+        <div class="left-top">
+          <h2>
+            <a href="">
+              <h2>
+                < Volver</h2>
+            </a>
+            <h1>Historial de Reservaciones</h1>
+        </div>
+        <div class="nav-cuenta">
+          <li><i class="fa-solid fa-user"></i><a href="../configUsuario/configUsuario.html">Información Personal</a>
+          </li>
+          <li><i class="fa-solid fa-lock"></i><a href="../configSeguridad/cambioContra.html">Seguridad</a></li>
+          <li><i class="fa-solid fa-briefcase"></i><a href="../configNegocio/configNegocio.html">Información de
+              Negocio</a></li>
+          <li><i class="fa-regular fa-credit-card"></i><a href="../configPago/configPago.html">Métodos de Pago</a></li>
+          <li><i class="fa-solid fa-book-open"></i><a href="../historial/historial.html">Historial de Reservas</a></li>
+        </div>
+      </section>
+      <section class="right">
+        <div class="top-right">
+          <h1>Historial</h1>
+          <div class="logo">
+            <p>Muestra el control de tus reservaciones y recomienda</p>
+          </div>
+          <div class="reservas">
+            <div class="reserva">
+              <div class="reserva-izq">
+                <img src="../assets/Fotoprincipal.jpg" alt="Hotel" />
+              </div>
+              <div class="reserva-der">
+                <h2>Hotel</h2>
+                <p>Fecha de entrada: 12/12/2021</p>
+                <p>Fecha de salida: 15/12/2021</p>
+                <p>Costo: $1,000</p>
+                <p>Estado: Activa</p>
+              </div>
+              <div class="boton-recomendar">
+                <button>Recomendar</button>
+              </div>
+            </div>
+            <div class="reserva">
+              <div class="reserva-izq">
+                <img src="../assets/Fotoprincipal.jpg" alt="Hotel" />
+              </div>
+              <div class="reserva-der">
+                <h2>Hotel</h2>
+                <p>Fecha de entrada: 12/12/2021</p>
+                <p>Fecha de salida: 15/12/2021</p>
+                <p>Costo: $1,000</p>
+                <p>Estado: Activa</p>
+              </div>
+              <div class="boton-recomendar">
+                <button>Recomendar</button>
+              </div>
+            </div>
+            <div class="reserva">
+              <div class="reserva-izq">
+                <img src="../assets/Fotoprincipal.jpg" alt="Hotel" />
+              </div>
+              <div class="reserva-der">
+                <h2>Hotel</h2>
+                <p>Fecha de entrada: 12/12/2021</p>
+                <p>Fecha de salida: 15/12/2021</p>
+                <p>Costo: $1,000</p>
+                <p>Estado: Activa</p>
+              </div>
+              <div class="boton-recomendar">
+                <button>Recomendar</button>
+              </div>
+            </div>
+            <div class="reserva">
+              <div class="reserva-izq">
+                <img src="../assets/Fotoprincipal.jpg" alt="Hotel" />
+              </div>
+              <div class="reserva-der">
+                <h2>Hotel</h2>
+                <p>Fecha de entrada: 12/12/2021</p>
+                <p>Fecha de salida: 15/12/2021</p>
+                <p>Costo: $1,000</p>
+                <p>Estado: Activa</p>
+              </div>
+              <div class="boton-recomendar">
+                <button>Recomendar</button>
+              </div>
+            </div>
+
+      </section>
   </main>
-  <!-- Footer -->
+
   <footer>
     <div class="footer">
       <p>
@@ -87,6 +128,7 @@
       </p>
     </div>
   </footer>
+  <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

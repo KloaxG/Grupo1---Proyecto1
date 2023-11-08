@@ -4,134 +4,125 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SyncTravel - Confirmación y Pago</title>
-    <!-- Enlaces a archivos externos -->
+    <title>Confirmación y Pago</title>
     <link rel="stylesheet" href="../pago/pago.css" />
     <link rel="icon" type="icon" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../index/for-all.css" />
 
 </head>
 
+
+<header>
+    <nav>
+        <div class="icono">
+            <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+            <h1>SyncTravel</h1>
+        </div>
+        <ul>
+            <li><a href="../index/index.html">Inicio</a></li>
+        </ul>
+        <div>
+            <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+                    alt="Perfil de usuario" /></a>
+        </div>
+    </nav>
+</header>
+
 <body>
-    <header>
-        <nav>
-            <div class="icono">
-                <img src="../assets/favicon.png" alt="Logo SyncTravel" />
-                <h1>SyncTravel</h1>
-            </div>
-            <ul>
-                <li><a href="../index/index.html">Inicio</a></li>
-            </ul>
-            <div>
-                <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
-                        alt="Perfil de usuario" /></a>
-            </div>
-        </nav>
-    </header>
-
-    <div class="espacio"></div>
-    <h1>Confirmación y Pago</h1>
-    <br>
-    <div class="espacio"></div>
-
-    <div class="contenedor_general">
-        <div class="contenedor-1">
+    <main>
+        <section class="left">
             <div class="contenedor">
-                <h3 class="el-h3">Datos de la Reserva</h3>
-                <div>
-                    <br>
-                    <label for="fecha">Fecha de Reserva:</label>
-                    <input type="date" id="fecha" name="fecha">
+                <div class="line">
+                    <a href="../habitaciones/room.html">
+                        < Volver</a>
+                            <h1>Confirmación y Pago</h1>
+                </div>
+                <div class="reserva-flex">
+                    <h2>Tu reservación:</h2>
+                    <label for="fecha">Fecha</label>
+                    <input type="date">
+                    <label for="usuarios">Huéspedes</label>
+                    <input type="number">
                 </div>
                 <div>
-                    <label for="ninos">Niños:</label>
-                    <input type="number" id="ninos" name="ninos" min="0">
-                    <label for="adultos">Adultos:</label>
-                    <input type="number" id="adultos" name="adultos" min="0">
+                    <h2>Paga con:</h2>
+                    <label for="tarjeta">Tarjeta de crédito o débito</label>
+                    <input type="radio">
+                </div>
+                <div>
+                    <form action="datos">
+                        <div class="reserva-flex">
+                            <label for="nombre">Nombre del titular:</label>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre en tarjeta">
+                        </div>
+                        <div class="reserva-flex">
+                            <label for="numero">Número de tarjeta:</label>
+                            <input type="text" name="numero" id="numero" placeholder="Número en tarjeta">
+                        </div>
+                        <div class="check">
+                            <label for="fecha">Fecha de vencimiento:</label>
+                            <input type="date" name="fecha" id="fecha" placeholder="Fecha de expiración">
+                            <label for="codigo">Código de seguridad:</label>
+                            <input type="text" name="codigo" id="codigo" placeholder="CVV">
+                        </div>
+                        <div class="check">
+                            <input type="checkbox" required>
+                            <label>Al registrarme, acepto los Términos de uso y la Política de privacidad.</label>
+                        </div>
+                        <div class="boton">
+                            <button>
+                                Pagar
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
+
+        </section>
+        <section class="right">
+            <div class="flex-foto">
+                <div>
+                    <img src="../assets/Fotoprincipal.jpg" alt="">
+                </div>
+                <div class="texto">
+                    <h3>La Fortuna, Alajuela</h3>
+                    <h1>Habitación Superior</h1>
+                    <hr>
+                    <p>6 invitados | 4 camas | 1 baño privado</p>
+                    <p class="estrellas"><i class="fa-solid fa-star"></i>4.84 (324 reviews)</p>
+                </div>
+            </div>
+            <div class="resumen-reserva">
+                <h2>Resumen de la reservación:</h2>
+                <div>
+                    <p>$87 por 4 noches</p>
+                    <p>$344</p>
+                </div>
+                <div>
+                    <p>Descuento</p>
+                    <p>$0</p>
+                </div>
+                <div>
+                    <p>Impuesto</p>
+                    <p>$45</p>
+                </div>
+                <hr>
+                <div>
+                    <p>Total</p>
+                    <p>$389</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <p>
+                &copy; 2023 SyncTravel Company Inc. | Privacidad | Todos los derechos reservados
+            </p>
         </div>
-
-        <div class="contenedor-derecho">
-            <div class="info-container">
-                <div class="hotel-name">
-                    <h4>Nombre del Hotel:</h4>
-                    <p>Nombre del hotel aquí</p>
-                </div>
-                <div class="room-type">
-                    <h4>Tipo de Habitación:</h4>
-                    <p>Tipo de habitación aquí</p>
-                </div>
-                <div class="room-details">
-                    <h4>Detalles de la Habitación:</h4>
-                    <p>Detalles de la habitación aquí</p>
-                </div>
-            </div>
-            <br>
-            <!-- Agrega la imagen del hotel dentro de este div -->
-            <div class="imagen-hotel">
-                <img src="../assets/BSJOS_POOL_28.jpg" alt="Imagen del hotel">
-            </div>
-
-            <!-- Agrega el desglose de pago aquí -->
-            <div class="contenedor-desglose">
-                <h3 class="el-h3">Desglose de Pago</h3>
-                <ul>
-                    <li>Precio por Noche: <span id="precioPorNoche">Insertar precio aquí</span></li>
-                    <li>Descuento: <span id="descuento">Insertar descuento aquí</span></li>
-                    <li>Impuesto de Ventas: <span id="impuestoVentas">Insertar impuesto aquí</span></li>
-                </ul>
-                <p>Total: <span id="total">Insertar total aquí</span></p>
-            </div>
-        </div>
-
-        <div class="contenedor-2">
-            <div class="metodo-pago-container">
-                <h3 class="mi-h3">Método de Pago</h3>
-                <div class="espacio"></div>
-                <div>
-                    <input type="radio" id="tarjeta" name="metodo_pago" value="tarjeta">
-                    <label for="tarjeta">Tarjeta de Crédito/Débito</label>
-                </div>
-                <br>
-                <div>
-                    <label for="numero_tarjeta">Número de Tarjeta:</label>
-                    <input type="text" id="numero_tarjeta" name="numero_tarjeta">
-                </div>
-
-                <div>
-                    <label for="nombre_titular">Nombre del Titular:</label>
-                    <input type="text" id="nombre_titular" name="nombre_titular">
-                </div>
-
-                <div>
-                    <label for="fecha_expiracion">Fecha de Expiración:</label>
-                    <input type="text" id="fecha_expiracion" name="fecha_expiracion" placeholder="MM/AA">
-                    <br>
-                    <label for="cvv">CVV (3 o 4 dígitos):</label>
-                    <input type="text" id="cvv" name="cvv">
-                </div>
-                <br><br><br>
-                <div>
-                    <input type="checkbox" id="guardar_tarjeta" name="guardar_tarjeta">
-                    <label for="guardar_tarjeta">Guardar mi tarjeta para futuras reservas</label>
-                </div>
-
-                <div class="espacio"></div>
-
-                <div>
-                    <button type="button" onclick="validarPago()">Pagar Ahora</button>
-                </div>
-
-                <div class="espacio"></div>
-            </div>
-        </div>
-        <script src="../validaciones.js"></script>
-        <footer>
-            <div class="footer">
-                <p>
-                    &copy; 2023 SyncTravel Company Inc. | Privacidad | Todos los derechos reservados
-                </p>
-            </div>
-        </footer>
+    </footer>
+    <script src="../validaciones.js"></script>
+    <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
+</body>
 
 </html>

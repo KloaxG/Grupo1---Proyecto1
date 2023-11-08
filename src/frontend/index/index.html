@@ -7,6 +7,8 @@
     <title>SyncTravel</title>
     <link rel="stylesheet" href="../index/index.css">
     <link rel="icon" type="icon" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../index/for-all.css" />
+
 
 </head>
 
@@ -19,10 +21,9 @@
                 <h1>SyncTravel</h1>
             </div>
             <ul>
-                
                 <li><a href="../index/index.html">Inicio</a></li>
             </ul>
-            <div class="op">
+            <div class="img-hide">
                 <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
                         alt="Perfil de usuario"></a>
                 <a href="../inicioSesion/inicioSesion.html">Ingresa </a>
@@ -37,22 +38,30 @@
                 <form id="form">
                     <div>
                         <h2>Destino</h2>
-                        <input type="text" id="destino" placeholder="Ingresa tu destino" required
-                            pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]{3,30}+$" title="Solo letras y espacios en blanco">
+                        <select placeholder="Ingresa tu destino" name="" id="destino">
+                            <option id="vacio" value="" selected disabled>Destino</option>
+                            <option id="sj">San Jose</option>
+                            <option id="a">Alajuela</option>
+                            <option id="h">Heredia</option>
+                            <option id="c">Cartago</option>
+                            <option id="l">Limon</option>
+                            <option id="pa">Puntarenas</option>
+                            <option id="g">Guanacaste</option>
+                        </select>
                     </div>
                     <div>
                         <h2>Ingreso</h2>
-                        <input type="date" id="ingreso" placeholder="Fecha ingreso" required>
+                        <input type="date" id="ingreso" placeholder="Fecha ingreso">
                     </div>
                     <div>
                         <h2>Salida</h2>
-                        <input type="date" id="salida" placeholder="Fecha salida" required>
+                        <input type="date" id="salida" placeholder="Fecha salida">
                     </div>
                     <div>
                         <h2>Huéspedes</h2>
-                        <input type="number" id="huespedes" placeholder="Cantidad de huéspedes" required>
+                        <input type="number" id="huespedes" placeholder="Cantidad de huéspedes">
                     </div>
-                    <button type="submit" value="enviar">Buscar <span><i
+                    <button type="submit" value="enviar" form="form" id="botonBuscar">Buscar <span><i
                                 class="fa-solid fa-magnifying-glass"></i></span> </button>
                     <span id="warning">
                         <p class="warning"></p>
@@ -60,7 +69,16 @@
                 </form>
             </div>
             <div class="imagen-buscador">
-                <img src="../assets/tortuga.jpg" alt="Volcan Arenal">
+                <div class="slider-izquierda">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div class="slider-pantalla">
+                    <img name="imagen">
+
+                </div>
+                <div class="slider-derecha">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
             </div>
         </section>
         <section id="hospedajes-calidad">
@@ -142,7 +160,7 @@
                         <p>Disfruta del mar de la mejor forma</p>
                     </div>
                 </div>
-                <div class=media>
+                <div class= "media">
                     <div class="opcion-media">
                         <img src="../assets/caballo.jpg" alt="Montar a caballo">
                         <div class="descripcion">
@@ -175,9 +193,9 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
-    <script src="/js/index.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-    <!-- <script src="/js/sweetAlert.js"></script> -->
+    <script src="../index/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 
 </html>

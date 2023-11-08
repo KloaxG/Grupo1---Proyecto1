@@ -6,12 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SyncTravel</title>
   <link rel="stylesheet" href="../olvidoContra/olvidoContra.css" />
-
+  <link rel="stylesheet" href="../index/for-all.css" />
   <link rel="icon" type="icon" href="/assets/favicon.png" />
 </head>
-
 <body>
-
   <header>
     <nav>
       <div class="icono">
@@ -22,23 +20,31 @@
         <li><a href="../index/index.html">Inicio</a></li>
       </ul>
       <div>
-        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png" alt="Perfil de usuario" /></a>
+        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+            alt="Perfil de usuario" /></a>
       </div>
     </nav>
   </header>
-
   </div>
   <main>
     <section>
       <form class="password_container">
-        <label for="password">Contraseña provisional:</label>
-        <input type="text" id="password-prov" name="password-prov" placeholder=" Ingresar contraseña provisional">
-        <label for="password2"> Nueva contraseña:</label>
-        <input type="password" id="password-nue" name="password-nue" placeholder="Ingresar nueva contraseña">
-        <label for="password3"> Confirmar contraseña:</label>
-        <input type="password" id="conf-password" name="conf-password" placeholder="Ingresar nueva contraseña">
-        <button type="submit" value="Login">Cambiar contraseña</button>
-        <p class=" warnings" id="warnings"></p>
+        <div>
+          <label for="password">Contraseña provisional:</label>
+          <input type="text" id="password-prov" name="password-prov" placeholder=" Ingresar contraseña provisional">
+        </div>
+        <div>
+          <label for="password2"> Nueva contraseña:</label>
+          <input type="password" id="password-nue" name="password-nue" placeholder="Ingresar nueva contraseña">
+        </div>
+        <div>
+          <label for="password3"> Confirmar contraseña:</label>
+          <input type="password" id="conf-password" name="conf-password" placeholder="Ingresar nueva contraseña">
+        </div>
+        <div class="centrar-boton">
+          <button type="submit" value="Login">Cambiar contraseña</button>
+          <p class=" warnings" id="warnings"></p>
+        </div>
       </form>
     </section>
     <br />

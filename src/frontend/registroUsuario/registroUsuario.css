@@ -1,72 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
 /* RESET */
 * {
     margin: 0;
     padding: 0;
     font-family: Poppins, sans-serif;
 }
-/* HEADER */
-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    gap: 30px;
-    background: #171A1F;
-    padding: 10px 0px;
-}
 
-nav .icono{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
+/* FIN RESET */
 
-.icono h1 {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-nav ul li {
-    list-style: none;
-}
-nav ul li a{
-    font-weight: 600;
-}
-
-nav ul li a:hover {
-    color: #E4BB97;
-    transition: 0.3s;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 200;
-
-}
-
-nav img {
-    width: 60px;
-}
-
-
-nav div img {
-    display: flex;
-    width: 40px;
-    background-color: white;
-    border-radius: 100%;
-    padding: 3px;
-}
-.register{
+.register {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.register button{
+.register button {
     margin-top: 15px;
     border: #171A1F 1px solid;
     width: 40%;
@@ -77,7 +26,7 @@ nav div img {
     cursor: pointer;
 }
 
-.register button:hover{
+.register button:hover {
     background: #171A1F;
     color: white;
     transition: 0.3s;
@@ -85,48 +34,52 @@ nav div img {
 
 /* MAIN */
 
-main{
+main {
     display: grid;
     place-items: center;
     grid-template-columns: 35% 65%;
 }
 
-main aside img{
+main aside img {
     width: 72vh;
     height: 88vh;
-    
+
 }
 
-.logo span{ 
+.logo span {
     color: #29c3e5;
 }
-section{
-    display:flex;
+
+section {
+    display: flex;
     flex-direction: column;
     padding-left: 150px;
     gap: 40px;
     margin: 0px auto;
 }
-section form{
+
+section form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-section form .grid{
+
+section form .grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-section form .grid div{
+section form .grid div {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-section form .grid div label{
+section form .grid div label {
     font-weight: 400;
 }
-section form .grid div input{
+
+section form .grid div input {
     width: 60%;
     height: 40px;
     border: #171A1F 1px solid;
@@ -134,29 +87,17 @@ section form .grid div input{
     padding: 0px 10px;
     font-weight: 400;
 }
-section form .grid div input:focus{
+
+section form .grid div input:focus {
     outline: none;
     border: #29C3E5 1px solid;
-    
+
 }
 
-
-
-
-
-/* FOOTER */
+/* FOOTER ESTATICO*/
 footer {
     position: fixed;
-    display: grid;
-    justify-content: center;
-    background: #FEF3EC;
-    padding: 20px 0px;
     width: 100%;
-    text-align: center;
     bottom: 0;
 }
-
-.footer {
-    color: #171A1F;
-    font-weight: 600;
-}
+/* FIN FOOTER ESTATICO */

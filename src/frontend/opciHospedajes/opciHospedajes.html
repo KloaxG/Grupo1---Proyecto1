@@ -5,10 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SyncTravel - Resultados </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="FontAwesome" referrerpolicy="no-referrer"/>
   <link rel="stylesheet" href="../opciHospedajes/opciHospedajes.css" />
   <link rel="icon" type="icon" href="../assets/favicon.png" />
-  <script src="wireframe-1.js" ></script>
+  <link rel="stylesheet" href="../index/for-all.css" />
 </head>
 
 <body>
@@ -24,171 +23,165 @@
         </ul>
       </div>
       <div>
-        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png" alt="Perfil de usuario" /></a>
+        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+            alt="Perfil de usuario" /></a>
       </div>
     </nav>
   </header>
-
   <main>
-    <br>
-    <section class="contenedores">
-      <div class="contenedor">
-        <div class="buscador">
-          <form>
-              <div>
-                  <h2>Destino</h2>
-                  <input type="text" placeholder="Ingresa tu destino">
-              </div>
-              <div>
-                  <h2>Ingreso</h2>
-                  <input type="date" placeholder="Fecha ingreso">
-              </div>
-              <div>
-                  <h2>Salida</h2>
-                  <input type="date" placeholder="Fecha salida">
-              </div>
-              <div>
-                  <h2>Huéspedes</h2>
-                  <input type="number" placeholder="Cantidad de huéspedes">
-              </div>
-              <button type="submit">Buscar <span><i class="fa-solid fa-magnifying-glass"></i></span> </button>
-          </form>
+    <!-- BUSCADOR -->
+    <div class="buscador">
+      <form id="formDestino">
+        <div>
+          <h2>Destino</h2>
+          <select placeholder="Ingresa tu destino" name="" id="destino">
+            <option id="vacio" value="" selected disabled>Destino</option>
+            <option id="sj">San Jose</option>
+            <option id="a">Alajuela</option>
+            <option id="h">Heredia</option>
+            <option id="c">Cartago</option>
+            <option id="l">Limon</option>
+            <option id="pa">Puntarenas</option>
+            <option id="g">Guanacaste</option>
+          </select>
+        </div>
+        <div>
+          <h2>Ingreso</h2>
+          <input type="date" placeholder="Fecha ingreso">
+        </div>
+        <div>
+          <h2>Salida</h2>
+          <input type="date" placeholder="Fecha salida">
+        </div>
+        <div>
+          <h2>Huéspedes</h2>
+          <input type="number" placeholder="Cantidad de huéspedes" min="1">
+        </div>
+        <button type="submit">Buscar <i class="fa-solid fa-magnifying-glass"></i><span></button>
+      </form>
+    </div>
+    <!-- FIN BUSCADOR -->
+    <!-- HABITACIONES -->
+    <section class="habitaciones">
+      <div class="habitacion">
+        <div>
+          <img class="img" src="../assets/Image 1.jpg" alt="Foto 1" class="imagen">
+        </div>
+        <div class="flex">
+          <span>
+            <a href="../habitaciones/room.html">
+              <h2 class="titulo">Habitación Superior en Alajuela</h2>
+            </a>
+            <p class="descripcion">Habitación acondicionada para toda la famlilia.</p>
+            <hr>
+            <p>
+              6 personas | 4 camas | 1 baño privado <br>
+              Cocina | Wifi | Aire Acondicionado
+            </p>
+          </span>
+          <span class="flex-low">
+            <p class="noche">$87/Noche</p>
+            <p class="estrellas"><i class="fa-solid fa-star"></i>4.84 (324 reviews)</p>
+          </span>
+        </div>
       </div>
-      </div>     
+      <hr>
+      <div class="habitacion">
+        <div>
+          <img class="img" src="../assets/Image 1.jpg" alt="Foto 1" class="imagen">
+        </div>
+        <div class="flex">
+          <span>
+            <a href="../habitaciones/room.html">
+              <h2 class="titulo">Habitación Superior en Alajuela</h2>
+            </a>
+            <p class="descripcion">Habitación acondicionada para toda la famlilia.</p>
+            <hr>
+            <p>
+              6 personas | 4 camas | 1 baño privado <br>
+              Cocina | Wifi | Aire Acondicionado
+            </p>
+          </span>
+          <span class="flex-low">
+            <p class="noche">$87/Noche</p>
+            <p class="estrellas"><i class="fa-solid fa-star"></i>4.84 (324 reviews)</p>
+          </span>
+        </div>
+      </div>
+      <hr>
+      <div class="habitacion">
+        <div>
+          <img class="img" src="../assets/Image 1.jpg" alt="Foto 1" class="imagen">
+        </div>
+        <div class="flex">
+          <span>
+            <a href="../habitaciones/room.html">
+              <h2 class="titulo">Habitación Superior en Alajuela</h2>
+            </a>
+            <p class="descripcion">Habitación acondicionada para toda la famlilia.</p>
+            <hr>
+            <p>
+              6 personas | 4 camas | 1 baño privado <br>
+              Cocina | Wifi | Aire Acondicionado
+            </p>
+          </span>
+          <span class="flex-low">
+            <p class="noche">$87/Noche</p>
+            <p class="estrellas"><i class="fa-solid fa-star"></i>4.84 (324 reviews)</p>
+          </span>
+        </div>
+      </div>
+      <hr>
+      <div class="habitacion">
+        <div>
+          <img class="img" src="../assets/Image 1.jpg" alt="Foto 1" class="imagen">
+        </div>
+        <div class="flex">
+          <span>
+            <a href="../habitaciones/room.html">
+              <h2 class="titulo">Habitación Superior en Alajuela</h2>
+            </a>
+            <p class="descripcion">Habitación acondicionada para toda la famlilia.</p>
+            <hr>
+            <p>
+              6 personas | 4 camas | 1 baño privado <br>
+              Cocina | Wifi | Aire Acondicionado
+            </p>
+          </span>
+          <span class="flex-low">
+            <p class="noche">$87/Noche</p>
+            <p class="estrellas"><i class="fa-solid fa-star"></i>4.84 (324 reviews)</p>
+          </span>
+        </div>
+      </div>
+      <hr>
+      <div class="habitacion">
+        <div>
+          <img class="img" src="../assets/Image 1.jpg" alt="Foto 1" class="imagen">
+        </div>
+        <div class="flex">
+          <span>
+            <a href="../habitaciones/room.html">
+              <h2 class="titulo">Habitación Superior en Alajuela</h2>
+            </a>
+            <p class="descripcion">Habitación acondicionada para toda la famlilia.</p>
+            <hr>
+            <p>
+              6 personas | 4 camas | 1 baño privado <br>
+              Cocina | Wifi | Aire Acondicionado
+            </p>
+          </span>
+          <span class="flex-low">
+            <p class="noche">$87/Noche</p>
+            <p class="estrellas"><i class="fa-solid fa-star"></i>4.84 (324 reviews)</p>
+          </span>
+        </div>
+      </div>
       <br>
-      <br>
-      <div class="contenedor-h4">
-        <h4>5 Lugares para Hospedarse </h4>
-      </div>
-      <div class="contenedores">
-        <div class="contenedor-2">
-            <img src="../assets/Image 1.jpg" alt="Foto 1" class="imagen">
-            <div class="contenedor-corazon">
-              <img class="izquierda, corazon" src="../assets/icono-corazon.png" alt="Icono Corazon" />
-            </div>
-              <div class="texto">
-                <p> Habitacion de Hotel en Alajuela </p>
-                <strong><a target="_blank" href="../habitaciones/room.html"> Habitacion Superior Familiar </a></strong>
-                <div class="texto-descripcion">
-                  <p> 6 personas * 4 camas * 1 bano privado</p>
-                  <p> Cocina * Wifi * Aire Acondicionado</p>
-                </div>
-                <div class="texto-precio">
-                  <p>$348 Total</p>
-                </div>
-                <br>
-                <div class="texto-estrella">
-                  <img class="estrella" src="../assets/icono-estrella.png" alt="Icono Estrella" />
-                  <p class="texto"> 4.84 (324 reviews)</p>
-                  <p> $87/Noche </p>
-                </div>
-              </div>
-          </div>
-        </div>
-    <hr>
-      <div class="contenedores">
-        <div class="contenedor-2">
-          <img src="../assets/Image 2.jpg" alt="Foto 2" class="imagen">
-          <div class="contenedor-corazon">
-            <img class="izquierda, corazon" src="../assets/icono-corazon.png" alt="Icono Corazon" />
-          </div>
-            <div class="texto">
-              <p> Apartmento en Alajuela </p>
-              <strong><a href="#"> Plantacion Rainbow </a></strong>
-              <div class="texto-descripcion">
-                <p> 3 personas * 1 cama * 1 bano privado</p>
-                <p> Cocina * Wifi * Aire Acondicionado</p>
-              </div>
-              <div class="texto-precio">
-                <p> $252 Total </p>
-              </div>
-              <div class="texto-estrella">
-                <img class="estrella" src="../assets/icono-estrella.png" alt="Icono Estrella" />
-                <p class="texto"> 4.84 (324 reviews)</p>
-                <p> $63/Noche </p>
-              </div>
-              </div>
-        </div>
-      </div>
-      
-      </div>
-      <hr>
-      <div class="contenedores">
-        <div class="contenedor-2">
-          <img src="../assets/Image 3jpg.jpg" alt="Foto 3" class="imagen">
-          <div class="contenedor-corazon">
-            <img class="izquierda, corazon" src="../assets/icono-corazon.png" alt="Icono Corazon" />
-          </div>
-            <div class="texto">
-              <p> Habitacion de Hotel en San Jose </p>
-              <strong><a href="#"> Suite Junior </a></strong>
-              <div class="texto-descripcion">
-                <p> 3 personas * 1 cama * 1 dormitorio</p>
-                <p> Wifi * Aire Acondicionado</p>
-              </div>
-              <div class="texto-precio">
-                <p>$144 Total</p>
-              </div>
-              <div class="texto-estrella">
-                <img class="estrella" src="../assets/icono-estrella.png" alt="Icono Estrella" />
-                <p class="texto"> 4.84 (324 reviews)</p>
-                <p>$36/ Noche</p>
-              </div>
-            </div>
-        </div>
-      </div>
-      <hr>
-      <div class="contenedores">
-        <div class="contenedor-2">
-          <img src="../assets/Image. 4.jpg" alt="Foto 4" class="imagen">
-          <div class="contenedor-corazon">
-            <img class="izquierda, corazon" src="../assets/icono-corazon.png" alt="Icono Corazon" />
-          </div>
-          <div class="texto">
-            <p> Habitacion de Hotel en Cartago </p>
-            <strong><a href="#"> Pointe Solitude </a></strong>
-            <div class="texto-descripcion">
-              <p> 2 personas * 2 cama * 1 bano privado</p>
-              <p> Cocina * Wifi * Aire Acondicionado</p>
-            </div>
-            <div class="texto-precio">
-              <p>$388 Total</p>
-            </div>
-            <div class="texto-estrella">
-              <img class="estrella" src="../assets/icono-estrella.png" alt="Icono Estrella" />
-              <p class="texto"> 4.84 (324 reviews)</p>
-              <p>$97/Noche</p>
-            </div>
-        </div>
-      </div>
-      <hr>
-      <div class="contenedores">
-        <div class="contenedor-2">
-          <img src="../assets/Image 5.jpg" alt="Foto 5" class="imagen">
-          <div class="contenedor-corazon">
-            <img class="izquierda, corazon" src="../assets/icono-corazon.png" alt="Icono Corazon" />
-          </div>
-          <div class="texto">
-            <p> Apartmento en Limon</p>
-            <strong><a href="#"> Harley Connection </a></strong>
-            <div class="texto-descripcion">
-              <p> 4 personas * 2 cama * 1 bano privado</p>
-              <p> Cocina * Wifi * Aire Acondicionado</p>
-            </div>
-            <div class="texto-precio">
-              <p>$196 Total</p>
-            </div>
-            <div class="texto-estrella">
-              <img class="estrella" src="../assets/icono-estrella.png" alt="Icono Estrella" />
-              <p class="texto"> 4.84 (324 reviews)</p>
-              <p class="">$49/Noche</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </section>
+    <!-- FIN HABITACIONES -->
   </main>
+  <!-- INICIO FOOTER -->
   <footer>
     <div class="footer">
       <p>
@@ -196,6 +189,11 @@
       </p>
     </div>
   </footer>
+  <!-- FIN FOOTER -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="opciHospedajes-.js"></script>
+  <script src="./opciHospedajes.js"></script>
+  <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

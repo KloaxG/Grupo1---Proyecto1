@@ -5,16 +5,13 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuración de Negocio</title>
-  <link rel="stylesheet" href="../configNegocio/configNegocio.css" />
+  <title>Configuracion de Seguridad</title>
+  <link rel="stylesheet" href="../configSeguridad/cambioContra.css" />
   <link rel="stylesheet" href="../index/for-all.css" />
-  <link rel="icon" type="icon" href="../assets/favicon.png">
-
 
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <nav>
       <div class="icono">
@@ -40,7 +37,7 @@
               <h2>
                 < Volver</h2>
             </a>
-            <h1>Configuración de Negocio</h1>
+            <h1>Configuración de Seguridad</h1>
         </div>
         <div class="nav-cuenta">
           <li><i class="fa-solid fa-user"></i><a href="../configUsuario/configUsuario.html">Información Personal</a>
@@ -52,70 +49,33 @@
           <li><i class="fa-solid fa-book-open"></i><a href="../historial/historial.html">Historial de Reservas</a></li>
         </div>
       </section>
-
       <section class="right">
         <div class="top-right">
-          <h2>Información de Negocio</h2>
-          <div class="flex-imagenes">
-            <img src="../assets/foto1.jpg" alt="">
-            <img src="../assets/foto2.avif" alt="">
-            <img src="../assets/foto2.jpg" alt="">
-
-            <button class="edit-fotos">
-              <i class="fa-solid fa-pencil"></i>
-            </button>
-
+          <h1>Seguridad</h1>
+          <div class="logo">
+            <h2><i class="fa-solid fa-lock"></i>Cambiar contraseña</h2>
           </div>
         </div>
-        <form class="form-negocio">
-          <div class="flex-opciones">
-            <label for="nombre" id="labelNombre">Nombre de negocio</label>
-            <span>
-              <input type="text">
-              <button>
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-            </span>
+        <form class="formulario">
+          <div class=" flex-opciones">
+            <label for="actual">Contraseña provisional</label>
+            <input type="password" name="actual" id="actual" placeholder="Contraseña actual" />
           </div>
-          <hr>
           <div class="flex-opciones">
-            <label for="correo">Contacto</label>
-            <span>
-              <input type="text" />
-              <button>
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-            </span>
+            <label for="nueva">Nueva contraseña</label>
+            <input type="password" name="nueva" id="nueva" placeholder="Nueva contraseña" />
           </div>
-          <hr>
           <div class="flex-opciones">
-            <label for="direccion">Dirección</label>
-            <span>
-              <textarea name="direccion" id="" cols="60" rows="3"></textarea>
-              <button>
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-            </span>
+              <label for="confirmar">Confirmar contraseña</label>
+              <input type="password" name="confirmar" id="confirmar" placeholder="Confirmar contraseña" />
           </div>
-          <hr>
-          <div class="flex-opciones">
-            <label for="direccion">Descripción</label>
-            <span>
-              <textarea name="direccion" id="" cols="60" rows="3"></textarea>
-              <button>
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-            </span>
-          </div>
-          <hr>
-          <button class="registro-negocio"><a href="../registroNegocio/registroNegocio.html">Registro Negocio</a></button>
+          <input type="submit" value="Guardar cambios" class="btn-guardar" />
         </form>
       </section>
-    </div>
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
     <div class="footer">
       <p>
@@ -123,9 +83,8 @@
       </p>
     </div>
   </footer>
-  <!-- FIN FOOTER -->
   <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
-  <script src="./configNegocio.js"></script>
+  <script src="../cambioContra/cambioContra.js"></script>
 </body>
 
 </html>

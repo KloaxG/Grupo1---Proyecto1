@@ -60,7 +60,7 @@ function checkNumTarjeta() {
     error.classList.remove('show');
   };
 
-  if (numero == '' || numero == NaN) {
+  if (numero == '' || numero == NaN || numero < 0) {
     // no valido, no es numero o no hay info
     inputTarjeta.classList.add('error');
     error.classList.remove('hide');
@@ -138,7 +138,7 @@ function checkCVV() {
     error.classList.remove('show');
   };
 
-  if (cvv.toString().length != 3 || cvv == '') {
+  if (cvv.toString().length != 3 || cvv == '' || cvv < 0) {
     inputCVV.classList.add('error');
     error.classList.remove('hide');
     error.classList.add('show');
@@ -180,7 +180,7 @@ function checkZip() {
     error.classList.remove('show');
   };
 
-  if (zip.toString().length != 5 || cvv == '') {
+  if (zip.toString().length != 5 || zip == '' || zip < 0) {
     inputZip.classList.add('error');
     error.classList.remove('hide');
     error.classList.add('show');
@@ -204,7 +204,7 @@ formInfo.onsubmit = function (event) {
 
     // espera 3 segundos y vuelve a la pagina de tarjetas
     setTimeout(() => {
-      window.location.href = '../html/configPago.html';
+      window.location.href = '../configPago/configPago.html';
     }, 3000);
   }
 };

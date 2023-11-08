@@ -1,113 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Configuracion de Usuario</title>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="../configPago/configPago.css" />
-    <link rel="stylesheet" href="../configUsuario/headerFooter.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Métodos de Pago</title>
+  <link rel="stylesheet" href="../configPago/configPago.css" />
+  <link rel="stylesheet" href="../index/for-all.css" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,200;1,600&display=swap"
-      rel="stylesheet"
-    />
+</head>
 
-    <!-- FontAwesome link -->
-    <script
-      src="https://kit.fontawesome.com/045b9380cb.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script defer src="../configPago/configPago.js"></script>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <nav>
-        <div class="icono">
-          <img src="../assets/favicon.png" alt="Logo SyncTravel" />
-          <h1>SyncTravel</h1>
-        </div>
-        <ul>
-          <li><a href="../index/index.html">Inicio</a></li>
-        </ul>
-        <div>
-          <a href="../configUsuario/configUsuario.html"
-            ><img src="../assets/icono-perfil.png" alt="Perfil de usuario"
-          /></a>
-        </div>
-      </nav>
-    </header>
-
-    <main id="configPago" class="grid-cont caja">
-      <!-- Titulo Pagina -->
-      <div class="gridTitulo1">
-        <h2>Configuracion de Cuenta</h2>
+<body>
+  <header>
+    <nav>
+      <div class="icono">
+        <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+        <h1>SyncTravel</h1>
       </div>
-
-      <div class="gridTitulo2">
-        <h2>Metodos de Pago</h2>
+      <ul>
+        <li><a href="../index/index.html">Inicio</a></li>
+      </ul>
+      <div>
+        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+            alt="Perfil de usuario" /></a>
       </div>
+    </nav>
+  </header>
 
-      <!-- Menu Navegacion -->
-      <div class="gridMenu" id="menu">
-        <ul>
-          <li><a href="../configUsuario/configUsuario.html">Informacion Personal</a></li>
-          <li>
-            <a href="../configNegocio/configNegocio.html">Informacion de Negocio</a>
+  <main>
+    <div class="contenedor">
+      <section class="left">
+        <div class="left-top">
+          <h2>
+            <a href="">
+              <h2>
+                < Volver</h2>
+            </a>
+            <h1>Configuración de pagos</h1>
+        </div>
+        <div class="nav-cuenta">
+          <li><i class="fa-solid fa-user"></i><a href="../configUsuario/configUsuario.html">Información Personal</a>
           </li>
-          <li><a href="../configPago/configPago.html">Metodos de Pago</a></li>
-          <li><a href="../historial/historial.html">Historial de Reservas</a></li>
-        </ul>
-      </div>
-
-      <!-- Tarjetas -->
-      <div class="gridTarjeta1 tarjeta">
-        <h2>Tarjeta 1</h2>
-        <div>
-          <p id="numTarjeta1">xxxx-1234</p>
-          <p id="expiracion1">12/23</p>
-          <button onclick="borrarTarjeta(this)">Eliminar</button>
+          <li><i class="fa-solid fa-lock"></i><a href="../configSeguridad/cambioContra.html">Seguridad</a></li>
+          <li><i class="fa-solid fa-briefcase"></i><a href="../configNegocio/configNegocio.html">Información de
+              Negocio</a></li>
+          <li><i class="fa-regular fa-credit-card"></i><a href="../configPago/configPago.html">Métodos de Pago</a></li>
+          <li><i class="fa-solid fa-book-open"></i><a href="../historial/historial.html">Historial de Reservas</a></li>
         </div>
-      </div>
-
-      <div class="gridTarjeta2 tarjeta">
-        <h2>Tarjeta 2</h2>
-        <div>
-          <p id="numTarjeta2">xxxx-1234</p>
-          <p id="expiracion2">12/23</p>
-          <button>Eliminar</button>
+      </section>
+      <section class="right">
+        <div class="top-right">
+          <h1>Pago</h1>
+          <div class="logo">
+            <h2><i class="fa-regular fa-credit-card"></i>Métodos de Pago</h2>
+          </div>
+          <div class="metodos">
+            <input type="radio" required>
+            <label for="tarjeta">
+              <span>
+                <i class="fa-brands fa-cc-visa" style="color: #283fe6;"></i><i class="fa-brands fa-cc-mastercard"
+                  style="color: #b62b2b;"></i><i class="fa-brands fa-cc-amex" style="color: #005eff;"></i>
+              </span>
+            </label>
+          </div>
         </div>
-      </div>
 
-      <div class="gridTarjeta3 tarjeta">
-        <h2>Tarjeta 3</h2>
-        <div>
-          <p id="numTarjeta3">xxxx-1234</p>
-          <p id="expiracion3">12/23</p>
-          <button>Eliminar</button>
-        </div>
-      </div>
+        <form class="formulario">
+          <div class=" flex-opciones">
+            <span>
+              <label for="actual">Nombre en tarjeta</label>
+              <input type="text" name="actual" id="actual" placeholder="Nombre en la tarjeta" />
+            </span>
+            <span>
+              <label for="actual">Número de tarjeta</label>
+              <input type="text" name="actual" id="actual" placeholder="Ingresa número de tarjeta" />
+            </span>
+          </div>
+          <div class="flex-opciones">
+            <span>
+              <label for="nueva">Fecha de vencimiento</label>
+              <input type="date" name="nueva" id="nueva" placeholder="MM/YY" />
+            </span>
+            <span>
+              <label for="nueva">CVV</label>
+              <input type="text" name="nueva" id="nueva" placeholder="Ingresa CVV" />
+            </span>
+          </div>
+          <div class="flex-boton">
+            <button type="submit" value="Eliminar" class="btn-guardar">Guardar tarjeta</button>
+          </div>
+        </form>
 
-      <!-- Boton Agregar -->
-      <div class="botonAdd gridBotonAdd" id="botonAdd">
-        <a href="../aggTarjeta/addTarjeta.html"><button>Agregar tarjeta</button></a>
-      </div>
-    </main>
+        <article class="tarjetas">
+          <div class="primer-tarjeta">
+            <div>
+              <i class="fa-brands fa-cc-visa" style="color: #283fe6;"></i>
+            </div>
+            <div class="tarjeta-number">
+              <p>**** **** **** 1234</p>
+            </div>
+            <div class="tarjeta-expire">
+              <p>12/23</p>
+            </div>
+            <div class="tarjeta-name">
+              <p>Nombre en la tarjeta</p>
+            </div>
+            <div class="boton-tarjeta">
+              <button type="submit" value="Eliminar" class="btn-borrar">Eliminar</button>
+            </div>
+          </div>
+          <div class="primer-tarjeta">
+            <div>
+              <i class="fa-brands fa-cc-mastercard" style="color: #b62b2b;"></i>
+            </div>
+            <div class="tarjeta-number">
+              <p>**** **** **** 1234</p>
+            </div>
+            <div class="tarjeta-expire">
+              <p>12/23</p>
+            </div>
+            <div class="tarjeta-name">
+              <p>Nombre en la tarjeta</p>
+            </div>
+            <div class="boton-tarjeta">
+              <input type="submit" value="Eliminar" class="btn-borrar" />
+            </div>
+          </div>
+          <div class="primer-tarjeta">
+            <div>
+              <i class="fa-brands fa-cc-amex" style="color: #005eff;"></i>
+            </div>
+            <div class="tarjeta-number">
+              <p>**** **** **** 1234</p>
+            </div>
+            <div class="tarjeta-expire">
+              <p>12/23</p>
+            </div>
+            <div class="tarjeta-name">
+              <p>Nombre en la tarjeta</p>
+            </div>
+            <div class="boton-tarjeta">
+              <input type="submit" value="Eliminar" class="btn-borrar" />
+            </div>
+          </div>
+        </article>
+      </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer">
-        <p>
-          &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
-        </p>
-      </div>
-    </footer>
-  </body>
+
+
+  <footer>
+    <div class="footer">
+      <p>
+        &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
+      </p>
+    </div>
+  </footer>
+  <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
+  <script src="../configPago/configPago.js"></script>
+</body>
+
 </html>

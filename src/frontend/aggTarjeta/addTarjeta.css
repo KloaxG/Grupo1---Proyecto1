@@ -1,5 +1,7 @@
 /* Acomodo en grid de la pagina */
 /* 5 Columnas para espaciar que no he buscado como cambiar el width de las columnas xd */
+
+
 .grid-cont {
   display: grid;
   grid-template-areas:
@@ -10,13 +12,10 @@
     'botones botones ';
   gap: 20px;
   padding: 10px;
-
-  /* background-color: red; */
 }
 
 .grid-cont > div {
-  /* background-color: lawngreen; */
-  /* width: 100%; */
+  
   text-align: center;
   padding: 20px 50px;
 }

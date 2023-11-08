@@ -1,240 +1,177 @@
-/* Acomodo en grid de la pagina */
-/* 5 Columnas para espaciar que no he buscado como cambiar el width de las columnas xd */
-.grid-cont {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap');
+
+
+/* CONTENEDOR */
+
+.contenedor {
   display: grid;
-  grid-template-areas:
-    'titulo  fotoPerfil1 fotoPerfil2 fotoPerfil2 fotoPerfil2'
-    'menu info info info info'
-    'menu cambioPW1 cambioPW1 cambioPW1 cambioPW2';
-
-  gap: 10px;
-  padding: 10px;
+  grid-template-columns: 40% 60%;
+  align-items: center;
 }
 
-.gridTitulo {
-  grid-area: titulo;
-  max-width: 30%;
-  margin-left: 20px;
+.left,
+.right {
+  margin-top: 80px;
+  padding-left: 100px;
 }
 
-.gridMenu {
-  grid-area: menu;
-  max-width: 30%;
-  margin-left: 10px;
+/* FIN CONTENEDOR */
+
+/* CONTENIDO IZQUIERDA */
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-right: #000 2px solid;
 }
 
-.gridFotoPerfil {
-  grid-area: fotoPerfil1;
-}
-
-.gridInfo {
-  grid-area: info;
-}
-
-.gridPW {
-  grid-area: cambioPW2;
-}
-
-/* Estilo caja contenedora */
-.caja {
-  margin: 120px 200px 120px 200px;
-  padding: 40px;
-  min-height: 64vh;
-  background-color: #fef3ec;
-  border: solid 1px black;
-}
-
-/* Estilo lapices */
-i {
-  color: #171a1f;
-}
-
-.error {
-  border: 2px solid #de3b40;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  color: #de3b40;
-}
-
-.showExito {
-  color: #1dd75b;
-}
-
-/* Fonts */
-* {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  box-sizing: border-box;
-}
-
-/* Estilo Titulo */
-h2 {
-  font-family: 'Poppins', sans-serif;
+.left-top {
+  font-size: 20px;
   font-weight: 600;
 }
 
-/* Estilos Menu Navegacion */
-.gridMenu ul li a {
+.left-top a {
+  color: #000;
   text-decoration: none;
-  color: #000000;
+  font-size: 15px;
 }
 
-.gridMenu ul li {
-  width: 200px;
+.left-top a:hover {
+  color: #e4bb97;
+}
+
+.nav-cuenta {
+
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.nav-cuenta li {
+  display: flex;
+  gap: 20px;
   list-style: none;
-  border-bottom: 2px solid black;
-  margin-top: 10px;
-  padding-left: 10px;
-}
-nav ul li {
-
-  list-style: none;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
-nav ul .nav-principal a {
+.nav-cuenta li a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.nav-cuenta li a:hover {
+  border-bottom: 2px solid #e4bb97;
+}
+
+.nav-cuenta i {
+  color: #e4bb97;
+  background: #000;
+  padding: 8px;
+  border-radius: 80%;
+}
+
+/* FIN CONTENIDO IZQUIERDA */
+
+/* CONTENIDO DERECHA */
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-img {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+
+.icon-img img {
+  width: 50%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: #000 2px solid;
+}
+
+.form-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+}
+
+.flex-opciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.flex-opciones span {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  width: 50%;
+  gap: 5px;
+}
+
+.form-usuario label {
+  font-size: 20px;
   font-weight: 600;
 }
 
-nav ul .nav-principal a:hover {
-  color: #E4BB97;
-  transition: 0.3s;
+.form-usuario input {
+  border: #000 1px solid;
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
 }
 
-/* Estilos Foto Perfil */
-#fotoPerfil {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: #29c3e5;
-  border: 1px solid black;
+.form-usuario input:focus {
+  outline: none;
+  border: #29C3E5 1px solid;
 }
 
-#fotoPerfil img {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  max-width: 100px;
-  max-height: 100px;
-  border-radius: 50%;
-}
-
-#botonEditarFoto {
-  /* Poner boton en la foto y moverlo */
-  position: absolute;
-  bottom: 5px;
-  left: 65%;
-
-  /* Estilo boton */
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #e4bb97;
-  border: 1px solid black;
-}
-
-#botonEditarFoto:hover {
-  background-color: #efb034;
+button {
+  align-items: center;
   cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+  background: #000;
+  border: #000 1px solid;
 }
 
-.rel-cont {
-  /* Necesario para el Pos Abs y poner el boton donde va */
-  position: relative;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-/* Estilos informacion de cuenta */
-
-#infoNombre,
-#infoCorreo,
-#infoDireccion {
-  display: inline-flex;
-  justify-content: space-between;
-  width: 500px;
-  margin-bottom: 20px;
-}
-
-#labelNombre {
-  margin-right: 86.45px;
-}
-
-#labelCorreo {
-  margin-right: 5.13px;
-}
-
-#labelDireccion {
-  margin-right: 76.25px;
-}
-
-#nombre,
-#correo,
-#direccion {
-  border-bottom: 2px solid black;
-  width: 300px;
+button i {
+  color: #e4bb97;
 }
 
 textarea {
-  height: fit-content;
-  border: none;
-  border-bottom: 2px solid black;
-  background-color: #fef3ec;
+  resize: none;
+  border: #000 1px solid;
 }
 
-#infoNombre button,
-#infoCorreo button,
-#infoDireccion button {
-  max-height: 30px;
-  width: 40px;
-  min-width: fit-content;
-
-  border-radius: 7px;
-  background-color: #e4bb97;
-  border: 1px solid black;
+textarea:focus {
+  outline: none;
+  border: #29C3E5 1px solid;
+  padding: 5px;
 }
 
-#infoNombre button:hover,
-#infoCorreo button:hover,
-#infoDireccion button:hover {
-  background-color: #efb034;
-  cursor: pointer;
+/* FIN CONTENIDO DERECHA */
+
+
+/* FOOTER ESTATICO*/
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
-#inputNombre,
-#inputCorreo,
-#inputDir {
-  border: none;
-  border-bottom: 2px solid black;
-  width: 300px;
-  background-color: #fef3ec;
-}
-
-#guardarNombre,
-#guardarCorreo,
-#guardarDir {
-  padding: 0 5px 2px 5px;
-}
-
-/* Estilo Boton Cambio PW */
-#botonPW {
-  background-color: #29c3e5;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: large;
-  border: 1px solid black;
-}
-
-#botonPW:hover {
-  font-family: 'Poppins', sans-serif;
-  font-style: italic;
-  background-color: #171a1f;
-  color: #ffffff;
-}
+/* FIN FOOTER ESTATICO */

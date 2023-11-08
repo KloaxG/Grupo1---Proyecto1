@@ -54,6 +54,14 @@ function checkNueva() {
     inputConfirma.classList.remove('error');
   };
 
+  if (nueva == '' || confirma == '') {
+    inputNueva.classList.add('error');
+    inputConfirma.classList.add('error');
+    // error.classList.remove('hide');
+    // error.classList.add('show');
+    return false;
+  }
+
   // revisa si los inputs son iguales
   if (nueva != confirma) {
     inputNueva.classList.add('error');
@@ -80,7 +88,7 @@ formInfo.onsubmit = function (event) {
 
     // espera 3 segundos y vuelve a la pagina de ajustes
     setTimeout(() => {
-      window.location.href = '../html/configUsuario.html';
+      window.location.href = '../configUsuario/configUsuario.html';
     }, 3000);
   }
 };
