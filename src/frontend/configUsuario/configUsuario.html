@@ -56,9 +56,9 @@
           <div>
             <span class="span-flex">
               <img src="../assets/icono-perfil.png" alt="Foto de Perfil" />
-              <button>
+              <!-- <button class="img-edit">
                 <i class="fa-solid fa-pencil"></i>
-              </button>
+              </button> -->
             </span>
             <p></p>
           </div>
@@ -67,43 +67,47 @@
           <div class="flex-opciones">
             <label for="nombre" id="labelNombre">Nombre Completo</label>
             <span>
-              <input type="text">
-              <button>
+              <input disabled value="John Doe" type="text">
+              <!-- <button>
                 <i class="fa-solid fa-pencil"></i>
-              </button>
+              </button> -->
             </span>
           </div>
           <hr>
           <div class="flex-opciones">
-            <label for="correo">Correo</label>
+            <label  for="correo">Correo</label>
             <span>
-              <input type="text" />
-              <button>
+              <input disabled value="John@Doe.com" type="email" id="correo" />
+              <!-- <button>
                 <i class="fa-solid fa-pencil"></i>
-              </button>
+              </button> -->
             </span>
           </div>
           <hr>
           <div class="flex-opciones">
             <label for="direccion">Dirección</label>
             <span>
-              <textarea name="direccion" id="" cols="60" rows="3"></textarea>
-              <button>
+              <textarea disabled name="direccion" id="direccion" cols="70" rows="3">"1234 Calle Siempreviva"</textarea>
+              <!-- <button>
                 <i class="fa-solid fa-pencil"></i>
-              </button>
+              </button> -->
             </span>
           </div>
           <hr>
           <div class="flex-opciones">
             <label for="nombre" id="labelNombre">Número telefónico</label>
             <span>
-              <input type="text">
-              <button>
+              <input disabled value="2256 2222" type="text">
+              <!-- <button>
                 <i class="fa-solid fa-pencil"></i>
-              </button>
+              </button> -->
             </span>
           </div>
           <hr>
+          <button class="editar">
+            <a href="../configUsuario/edicionUsuario.html"><i class="fa-solid fa-pencil"></i>Editar información</a>
+            
+          </button>
         </form>
       </section>
     </div>
@@ -119,7 +123,6 @@
   </footer>
   <!-- FIN FOOTER -->
   <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
-  <script src="../configUsuario/configUsuario.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edición de Información</title>
+  <link rel="stylesheet" href="../configUsuario/configUsuario.css" />
+  <link rel="stylesheet" href="../index/for-all.css" />
+  <link rel="icon" type="icon" href="../assets/favicon.png">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="icono">
+        <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+        <h1>SyncTravel</h1>
+      </div>
+      <ul>
+        <li class="nav-principal"><a href="../index/index.html">Inicio</a></li>
+      </ul>
+      <div>
+        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
+            alt="Perfil de usuario" /></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contenedor">
+      <section class="left">
+        <div class="left-top">
+          <h2>
+            <a href="">
+              <h2>
+                < Volver</h2>
+            </a>
+            <h1>Configuración de Cuenta</h1>
+        </div>
+        <div class="nav-cuenta">
+          <li><i class="fa-solid fa-user"></i><a href="../configUsuario/configUsuario.html">Información Personal</a>
+          </li>
+          <li><i class="fa-solid fa-lock"></i><a href="../configSeguridad/cambioContra.html">Seguridad</a></li>
+          <li><i class="fa-solid fa-briefcase"></i><a href="../configNegocio/configNegocio.html">Información de
+              Negocio</a></li>
+          <li><i class="fa-regular fa-credit-card"></i><a href="../configPago/configPago.html">Metodos de Pago</a></li>
+          <li><i class="fa-solid fa-book-open"></i><a href="../historial/historial.html">Historial de Reservas</a></li>
+        </div>
+      </section>
+
+      <section class="right">
+        <div class="icon-img">
+          <div>
+            <span class="span-flex">
+              <img src="../assets/icono-perfil.png" alt="Foto de Perfil" />
+              <button class="img-edit">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+            </span>
+            <p></p>
+          </div>
+        </div>
+        <form id="form-usuario" class="form-usuario">
+          <div class="flex-opciones">
+            <label for="nombre" id="labelNombre">Nombre Completo</label>
+            <span>
+              <input id="nombre" type="text">
+              
+            </span>
+          </div>
+          <hr>
+          <div class="flex-opciones">
+            <label for="correo">Correo</label>
+            <span>
+              <input id="correo" type="text" />
+              
+            </span>
+          </div>
+          <hr>
+          <div class="flex-opciones">
+            <label for="direccion">Dirección</label>
+            <span>
+              <textarea name="direccion" id="direccion" cols="70" rows="3"></textarea>
+              
+            </span>
+          </div>
+          <hr>
+          <div class="flex-opciones">
+            <label for="nombre" id="labelNombre">Número telefónico</label>
+            <span>
+              <input id="numero" type="number">
+              
+            </span>
+          </div>
+          <hr>
+          <button type="submit" form="form-usuario" class="editar">
+            <a ><i class="fa-solid fa-save"></i>Guardar Información</a>
+            
+          </button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer">
+      <p>
+        &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
+      </p>
+    </div>
+  </footer>
+  <!-- FIN FOOTER -->
+  <script src="https://kit.fontawesome.com/045b9380cb.js" crossorigin="anonymous"></script>
+  <script defer src="../configUsuario/configUsuario.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

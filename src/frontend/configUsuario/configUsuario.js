@@ -1,159 +1,157 @@
-// Cambia el espacio de un p a un form para actualizar la informacion
-function editarNombre() {
-  const espNombre = document.getElementById('nombre');
+function fireMixin(icono, msj, showReqs = false) {
+  const mixin = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    showConfirmButton: true,
+    confirmButtonText: 'Ver requerimientos de cada dato.',
+    confirmButtonColor: '#EFB034',
 
-  const formNombre = document.getElementById('formNombre');
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
 
-  const botonEditar = document.getElementById('botonNombre');
-
-  espNombre.classList.add('hide');
-  formNombre.classList.remove('hide');
-  formNombre.classList.add('show');
-  botonEditar.classList.add('hide');
+  mixin
+    .fire({
+      icon: icono,
+      title: msj,
+      showConfirmButton: showReqs,
+    })
+    .then((r) => {
+      if (r.isConfirmed) {
+        Swal.fire({
+          title: 'Requerimientos',
+          html: `<b>Nombre</b>: Escriba su nombre. <br> <b>Correo</b>: Escriba un correo válido. <br> <b>Dirección</b>: Escriba su dirección. <br> <b>Número telefónico</b>: Escriba un número de al menos 8 dígitos.`,
+          confirmButtonColor: '#1DD75B',
+        });
+      }
+    });
 }
 
-function editarCorreo() {
-  const espCorreo = document.getElementById('correo');
-
-  const formCorreo = document.getElementById('formCorreo');
-
-  const botonEditar = document.getElementById('botonCorreo');
-
-  espCorreo.classList.add('hide');
-  formCorreo.classList.remove('hide');
-  formCorreo.classList.add('show');
-  botonEditar.classList.add('hide');
+function fireConfirmacion() {
+  Swal.fire({
+    title: 'La información ingresada válida será actualizada.',
+    text: 'Continuar?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#1DD75B',
+    cancelButtonColor: '#DE3B40',
+    confirmButtonText: 'Actualizar',
+    cancelButtonText: 'Cancelar',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: 'Información actualizada',
+        text: 'Sus cambios han sido guardados.',
+        icon: 'success',
+        confirmButtonColor: '#1DD75B',
+      });
+    }
+  });
 }
 
-function editarDir() {
-  const espDir = document.getElementById('direccion');
-
-  const formDir = document.getElementById('formDir');
-
-  const botonEditar = document.getElementById('botonDir');
-
-  espDir.classList.add('hide');
-  formDir.classList.remove('hide');
-  formDir.classList.add('show');
-  botonEditar.classList.add('hide');
+function checkInfo() {
+  if (checkNombre() || checkCorreo() || checkDir() || checkNum()) {
+    return true;
+  }
 }
 
-// hace las validaciones del nombre nuevo
-function checkNombre() {
-  const espNombre = document.getElementById('nombre');
+function setValues() {
+  let valuesMap = new Map();
 
-  const formNombre = document.getElementById('formNombre');
-  const inputNombre = document.getElementById('inputNombre');
-  const nombre = inputNombre.value;
+  valuesMap.set('nombre', checkNombre());
+  valuesMap.set('correo', checkCorreo());
+  valuesMap.set('dir', checkDir());
+  valuesMap.set('num', checkNum());
 
-  const error = document.getElementById('errorNombre');
+  return valuesMap;
+}
 
-  const botonEditar = document.getElementById('botonNombre');
+function checkVacios() {
+  const values = setValues();
+  let validos = new Array();
 
-  if (nombre == '') {
-    error.classList.remove('hide');
-    error.classList.add('show');
+  values.forEach(function unValido(value, key) {
+    console.log(`${key}: ${value}`);
 
-    inputNombre.classList.add('error');
+    if (value) {
+      validos.push(key);
+    }
+  });
+
+  console.log(validos);
+
+  if (validos.length == 0) {
+    fireMixin(
+      'error',
+      'Por favor ingrese al menos un dato en formato válido para ser actualizado.',
+      true
+    );
     return false;
   } else {
-    formNombre.classList.remove('show');
-    formNombre.classList.add('hide');
-    espNombre.classList.remove('hide');
-    botonEditar.classList.remove('hide');
-    error.classList.remove('show');
-    error.classList.add('hide');
+    fireConfirmacion();
+    return true;
+  }
+}
+
+function checkNombre() {
+  const nombre = document.getElementById('nombre').value;
+
+  if (nombre == '') {
+    return false;
+  } else {
     return true;
   }
 }
 
 function checkCorreo() {
-  const espCorreo = document.getElementById('correo');
+  const correo = document.getElementById('correo').value;
 
-  const formCorreo = document.getElementById('formCorreo');
-  const inputCorreo = document.getElementById('inputCorreo');
-  const correo = inputCorreo.value;
-
-  const error = document.getElementById('errorCorreo');
-
-  const botonEditar = document.getElementById('botonCorreo');
-
-  // expresion regular para revisar que lo que esten escribiendo sea un correo
   // https://www.regexlib.com/REDetails.aspx?regexp_id=26
   const regExCorreo = new RegExp(
     '^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$'
   );
 
-  console.log(regExCorreo.test(correo));
-
-  if (correo == '' || !regExCorreo.test(correo)) {
-    error.classList.remove('hide');
-    error.classList.add('show');
-
-    inputCorreo.classList.add('error');
+  if (!regExCorreo.test(correo)) {
     return false;
   } else {
-    formCorreo.classList.remove('show');
-    formCorreo.classList.add('hide');
-    espCorreo.classList.remove('hide');
-    botonEditar.classList.remove('hide');
-    error.classList.remove('show');
-    error.classList.add('hide');
     return true;
   }
 }
 
 function checkDir() {
-  const espDir = document.getElementById('direccion');
+  const dir = document.getElementById('direccion').value;
 
-  const formDir = document.getElementById('formDir');
-  const inputDir = document.getElementById('inputDir');
-  const direccion = inputDir.value;
-
-  const error = document.getElementById('errorDir');
-
-  const botonEditar = document.getElementById('botonDir');
-
-  if (direccion == '') {
-    error.classList.remove('hide');
-    error.classList.add('show');
-
-    inputDir.classList.add('error');
+  if (dir == '') {
     return false;
   } else {
-    formDir.classList.remove('show');
-    formDir.classList.add('hide');
-    espDir.classList.remove('hide');
-    botonEditar.classList.remove('hide');
-    error.classList.remove('show');
-    error.classList.add('hide');
     return true;
   }
 }
 
-// formularios de cambio de info
-formNombre = document.getElementById('formNombre');
-formCorreo = document.getElementById('formCorreo');
-formDir = document.getElementById('formDir');
+function checkNum() {
+  const num = document.getElementById('numero').value;
 
-// correr y actualizar en bd cuando se hace submit en los forms
-formNombre.onsubmit = function (event) {
-  event.preventDefault();
-  if (checkNombre()) {
-    // Mande a BD y actualice
+  if (num.toString().length < 8) {
+    return false;
+  } else {
+    return true;
   }
-};
+}
 
-formCorreo.onsubmit = function (event) {
-  event.preventDefault();
-  if (checkCorreo()) {
-    // Mande a BD y actualice
-  }
-};
+const formInfo = document.getElementById('form-usuario');
 
-formDir.onsubmit = function (event) {
+formInfo.onsubmit = function (event) {
   event.preventDefault();
-  if (checkDir()) {
-    // Mande a BD y actualice
+  console.clear();
+  if (checkVacios()) {
+    // actualizar en BD.then() redirect a config usuario
+    setTimeout(() => {
+      window.location.href = '../configUsuario/configUsuario.html';
+    }, 3000);
   }
 };

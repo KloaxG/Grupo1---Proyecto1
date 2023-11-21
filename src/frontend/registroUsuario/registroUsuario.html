@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="../registroUsuario/registroUsuario.css" />
   <link rel="icon" type="icon" href="../assets/favicon.png" />
   <link rel="stylesheet" href="../index/for-all.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="./registroUsuario.js"></script>
+
 </head>
 
 <body>
@@ -38,52 +41,52 @@
       <form id="formReg">
         <div class="grid">
           <div>
-            <label for="name">Nombre</label>
-            <input type="text" required placeholder="Nombre de usuario">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Nombre de usuario">
           </div>
           <div>
-            <label for="name">Apellido</label>
-            <input type="text" required placeholder="Apellido">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" placeholder="Apellido">
           </div>
           <div>
-            <label for="name">Fecha de nacimiento</label>
-            <input type="date" required placeholder="Fecha de nacimiento">
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="nacimiento" placeholder="Fecha de nacimiento">
           </div>
           <div>
-            <label for="name">ID</label>
-            <input type="number" required placeholder="Cedula, pasaporte, otro">
+            <label for="id">ID</label>
+            <input type="number" id="id" placeholder="Cedula, pasaporte, otro">
           </div>
           <div>
-            <label for="name">Provincia</label>
-            <input type="text" required placeholder="Provincia">
+            <label for="provincia">Provincia</label>
+            <input type="text" id="provincia" placeholder="Provincia">
           </div>
         </div>
         <div class="grid">
           <div>
-            <label for="name">Cantón</label>
-            <input type="text" required placeholder="Cantón">
+            <label for="canton">Cantón</label>
+            <input type="text" id="canton" placeholder="Cantón">
           </div>
           <div>
-            <label for="name">Distrito</label>
-            <input type="text" required placeholder="Distrito">
+            <label for="distrito">Distrito</label>
+            <input type="text" id="distrito" placeholder="Distrito">
           </div>
           <div>
-            <label for="name">Otras señas</label>
-            <input type="text" required placeholder="Otras señas">
+            <label for="sennas">Otras señas</label>
+            <input type="text" id="sennas" placeholder="Otras señas">
           </div>
           <div>
-            <label for="name">Correo electrónico</label>
-            <input type="email" required placeholder="ejemplo.correo@gmail.com">
+            <label for="correo">Correo electrónico</label>
+            <input type="text" id="correo" placeholder="ejemplo.correo@gmail.com">
           </div>
           <div>
-            <label for="name">Contraseña</label>
-            <input type="password" required placeholder="Minimo 8 caracteres">
+            <label for="pw">Contraseña</label>
+            <input type="password" id="pw" placeholder="Minimo 8 caracteres">
           </div>
         </div>
         </div>
         <div class="register">
           <div>
-            <input type="checkbox" required>
+            <input id="terms" type="checkbox">
             <label>Al registrarme, acepto los Términos de uso y la <br> Política de privacidad.</label>
           </div>
           <button type="submit" form="formReg" id="botonLogin">Crear cuenta</button>
@@ -101,7 +104,6 @@
       </p>
     </div>
   </footer>
-  <script src="./registroUsuario.js"></script>
 </body>
 
 </html>

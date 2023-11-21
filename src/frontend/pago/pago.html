@@ -9,6 +9,8 @@
     <link rel="icon" type="icon" href="../assets/favicon.png">
     <link rel="stylesheet" href="../index/for-all.css" />
 
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 
@@ -34,12 +36,14 @@
             <div class="contenedor">
                 <div class="line">
                     <a href="../habitaciones/room.html">
-                        < Volver</a>
+                        <a href="../habitaciones/room.html">Volver</a>
                             <h1>Confirmación y Pago</h1>
                 </div>
                 <div class="reserva-flex">
                     <h2>Tu reservación:</h2>
-                    <label for="fecha">Fecha</label>
+                    <label for="fecha">Fecha de entrada</label>
+                    <input type="date">
+                    <label for="fecha">Fecha de salida</label>
                     <input type="date">
                     <label for="usuarios">Huéspedes</label>
                     <input type="number">
@@ -47,10 +51,11 @@
                 <div>
                     <h2>Paga con:</h2>
                     <label for="tarjeta">Tarjeta de crédito o débito</label>
-                    <input type="radio">
+                    <input type="radio" 
+                    checked id="tarjeta">
                 </div>
                 <div>
-                    <form action="datos">
+                    <form id="datos">
                         <div class="reserva-flex">
                             <label for="nombre">Nombre del titular:</label>
                             <input type="text" name="nombre" id="nombre" placeholder="Nombre en tarjeta">
@@ -61,16 +66,16 @@
                         </div>
                         <div class="check">
                             <label for="fecha">Fecha de vencimiento:</label>
-                            <input type="date" name="fecha" id="fecha" placeholder="Fecha de expiración">
+                            <input type="month" name="fecha" id="fecha" placeholder="Fecha de expiración">
                             <label for="codigo">Código de seguridad:</label>
                             <input type="text" name="codigo" id="codigo" placeholder="CVV">
                         </div>
                         <div class="check">
-                            <input type="checkbox" required>
+                            <input type="checkbox" >
                             <label>Al registrarme, acepto los Términos de uso y la Política de privacidad.</label>
                         </div>
                         <div class="boton">
-                            <button>
+                            <button type="submit" form="datos">
                                 Pagar
                             </button>
                         </div>
@@ -121,7 +126,7 @@
             </p>
         </div>
     </footer>
-    <script src="../validaciones.js"></script>
+    <script src="../pago/validaciones.js"></script>
     <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
 </body>
 
