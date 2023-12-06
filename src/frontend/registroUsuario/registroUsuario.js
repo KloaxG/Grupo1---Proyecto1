@@ -1,3 +1,86 @@
+const formulario = document.getElementById('formulario');
+
+formulario.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+
+    if (
+        !checkNombre() ||
+        !checkApellido() ||
+        !checkDOB() ||
+        !checkID() ||
+        !checkProv() ||
+        !checkCel() ||
+        !checkCanton() ||
+        !checkDistrito() ||
+        !checkSennas() ||
+        !checkCorreo() ||
+        !checkContra() ||
+        !checkTerms()
+    ) {
+        return;
+    }
+
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const fechaNacimiento = document.getElementById('nacimiento').value;
+    const id = document.getElementById('id').value;
+    const provincia = document.getElementById('provincia').value;
+    const canton = document.getElementById('canton').value;
+    const distrito = document.getElementById('distrito').value;
+    const direccionExacta = document.getElementById('sennas').value;
+    const correo = document.getElementById('correo').value;
+    const password = document.getElementById('pw').value;
+    const cel = document.getElementById('cel').value;
+
+    const formData = {
+        nombre,
+        apellido,
+        fechaNacimiento,
+        id,
+        provincia,
+        canton,
+        distrito,
+        direccionExacta,
+        correo,
+        password,
+        cel,
+    };
+
+    fetch('http://localhost:3000/api/users/new', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            let timerInterval;
+            Swal.fire({
+                icon: 'success',
+                title: 'Cuenta creada con éxito!',
+                html: 'Será redireccionado, por favor espere.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector('b');
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                },
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.href = '../inicioSesion/inicioSesion.html';
+                }
+            });
+        });
+});
+
 function fireMixin(icono, msj) {
     const mixin = Swal.mixin({
         toast: true,
@@ -16,7 +99,6 @@ function fireMixin(icono, msj) {
         title: msj,
     });
 }
-
 function checkNombre() {
     const inputNombre = document.getElementById('nombre');
     const nombre = inputNombre.value;
@@ -169,6 +251,20 @@ function checkTerms() {
     }
 }
 
+function checkCel() {
+    const inputCel = document.getElementById('cel');
+    const cel = inputCel.value;
+
+    if (cel.length < 8) {
+        fireMixin(
+            'error',
+            'Por favor ingrese un número de celular de al menos 8 digitos.'
+        );
+        return false;
+    } else {
+        return true;
+    }
+}
 function checkInfo() {
     if (
         checkNombre() &&
@@ -176,6 +272,7 @@ function checkInfo() {
         checkDOB() &&
         checkID() &&
         checkProv() &&
+        checkCel() &&
         checkCanton() &&
         checkDistrito() &&
         checkSennas() &&
@@ -188,74 +285,3 @@ function checkInfo() {
         return false;
     }
 }
-
-const formReg = document.getElementById('formReg');
-formReg.onsubmit = function (event) {
-    event.preventDefault();
-
-    if (checkInfo()) {
-        let timerInterval;
-        Swal.fire({
-            icon: 'success',
-            title: 'Cuenta creada con éxito!',
-            html: 'Será redireccionado, por favor espere.',
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: () => {
-                Swal.showLoading();
-                const timer = Swal.getPopup().querySelector('b');
-                timerInterval = setInterval(() => {
-                    timer.textContent = `${Swal.getTimerLeft()}`;
-                }, 100);
-            },
-            willClose: () => {
-                clearInterval(timerInterval);
-            },
-        }).then((result) => {
-            if (result.dismiss === Swal.DismissReason.timer) {
-                window.location.href = '../opciHospedajes/opciHospedajes.html';
-            }
-        });
-    }
-};
-
-const formulario = document.getElementById('formulario');
-
-formulario.addEventListener('submit', function (evento) {
-    evento.preventDefault();
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const fechaNacimiento = document.getElementById('nacimiento').value;
-    const id = document.getElementById('id').value;
-    const provincia = document.getElementById('provincia').value;
-    const canton = document.getElementById('canton').value;
-    const distrito = document.getElementById('distrito').value;
-    const direccionExacta = document.getElementById('sennas').value;
-    const correo = document.getElementById('correo').value;
-    const password = document.getElementById('pw').value;
-
-    const formData = {
-        nombre,
-        apellido,
-        fechaNacimiento,
-        id,
-        provincia,
-        canton,
-        distrito,
-        direccionExacta,
-        correo,
-        password,
-    };
-
-    fetch('http://localhost:3000/api/users/new', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data);
-        });
-});

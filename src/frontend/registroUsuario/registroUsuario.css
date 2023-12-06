@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 /* RESET */
 * {
     margin: 0;
@@ -17,17 +22,17 @@
 
 .register button {
     margin-top: 15px;
-    border: #171A1F 1px solid;
+    border: #171a1f 1px solid;
     width: 40%;
     height: 40px;
-    background: #29C3E5;
+    background: #29c3e5;
     font-weight: 400;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .register button:hover {
-    background: #171A1F;
+    background: #171a1f;
     color: white;
     transition: 0.3s;
 }
@@ -43,7 +48,6 @@ main {
 main aside img {
     width: 72vh;
     height: 88vh;
-
 }
 
 .logo span {
@@ -82,7 +86,7 @@ section form .grid div label {
 section form .grid div input {
     width: 60%;
     height: 40px;
-    border: #171A1F 1px solid;
+    border: #171a1f 1px solid;
     border-radius: 5px;
     padding: 0px 10px;
     font-weight: 400;
@@ -90,8 +94,7 @@ section form .grid div input {
 
 section form .grid div input:focus {
     outline: none;
-    border: #29C3E5 1px solid;
-
+    border: #29c3e5 1px solid;
 }
 
 /* FOOTER ESTATICO*/

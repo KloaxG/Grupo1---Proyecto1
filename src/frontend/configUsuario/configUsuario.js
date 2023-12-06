@@ -1,157 +1,252 @@
-function fireMixin(icono, msj, showReqs = false) {
-  const mixin = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    showConfirmButton: true,
-    confirmButtonText: 'Ver requerimientos de cada dato.',
-    confirmButtonColor: '#EFB034',
+/* ----------------------------INFO PERSONAL---------------------------------- */
+window.onload = function () {
+    const infoPe = document.getElementById('infoPersonal');
+    const seguridad = document.getElementById('seguridad');
+    const infoNegocio = document.getElementById('infoNegocio');
+    const infoNegocioEdit = document.getElementById('infoNegocio-edit');
+    const metodoPago = document.getElementById('metodoPago');
+    const historial = document.getElementById('historialReserva');
 
-    didOpen: (toast) => {
-      toast.onmouseenter = Swal.stopTimer;
-      toast.onmouseleave = Swal.resumeTimer;
-    },
-  });
+    const click_info = document.querySelector('.infope-click');
+    const click_segur = document.querySelector('.seguridad-click');
+    const click_infoNegocio = document.querySelector('.negocio-click');
+    const click_infoNegocioEdit = document.querySelector('.infoNegocio-edit');
+    const click_metodo = document.querySelector('.pagos-click');
+    const click_historial = document.querySelector('.reserva-click');
 
-  mixin
-    .fire({
-      icon: icono,
-      title: msj,
-      showConfirmButton: showReqs,
-    })
-    .then((r) => {
-      if (r.isConfirmed) {
-        Swal.fire({
-          title: 'Requerimientos',
-          html: `<b>Nombre</b>: Escriba su nombre. <br> <b>Correo</b>: Escriba un correo válido. <br> <b>Dirección</b>: Escriba su dirección. <br> <b>Número telefónico</b>: Escriba un número de al menos 8 dígitos.`,
-          confirmButtonColor: '#1DD75B',
-        });
-      }
+    click_info.addEventListener('click', () => {
+        mostrarSeccion(infoPe);
     });
-}
 
-function fireConfirmacion() {
-  Swal.fire({
-    title: 'La información ingresada válida será actualizada.',
-    text: 'Continuar?',
-    icon: 'question',
-    showCancelButton: true,
-    confirmButtonColor: '#1DD75B',
-    cancelButtonColor: '#DE3B40',
-    confirmButtonText: 'Actualizar',
-    cancelButtonText: 'Cancelar',
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: 'Información actualizada',
-        text: 'Sus cambios han sido guardados.',
-        icon: 'success',
-        confirmButtonColor: '#1DD75B',
-      });
+    click_segur.addEventListener('click', () => {
+        mostrarSeccion(seguridad);
+    });
+
+    click_infoNegocio.addEventListener('click', () => {
+        mostrarSeccion(infoNegocio);
+    });
+
+    click_infoNegocioEdit.addEventListener('click', () => {
+        mostrarSeccion(infoNegocioEdit);
+    });
+
+    click_metodo.addEventListener('click', () => {
+        mostrarSeccion(metodoPago);
+    });
+
+    click_historial.addEventListener('click', () => {
+        mostrarSeccion(historial);
+    });
+
+    const selectMenu = document.getElementById('select');
+
+    function mostrarSeccion(seccion) {
+        const secciones = [
+            infoPe,
+            seguridad,
+            infoNegocio,
+            infoNegocioEdit,
+            metodoPago,
+            historial,
+        ];
+        secciones.forEach((element) => {
+            element.style.display = 'none';
+        });
+        seccion.style.display = 'block';
     }
-  });
-}
 
-function checkInfo() {
-  if (checkNombre() || checkCorreo() || checkDir() || checkNum()) {
-    return true;
-  }
-}
+    const botonEditar = document.querySelector('.infopeclick-edit');
+    const imgPerfil = document.getElementById('img_perfil');
+    let myWidget;
 
-function setValues() {
-  let valuesMap = new Map();
+    if (botonEditar && imgPerfil) {
+        myWidget = cloudinary.createUploadWidget(
+            {
+                cloudName: 'digw2tk5v',
+                uploadPreset: 'syncTravel',
+            },
+            (error, result) => {
+                if (!error && result && result.event === 'success') {
+                    console.log('Done! Here is the image info: ', result.info);
 
-  valuesMap.set('nombre', checkNombre());
-  valuesMap.set('correo', checkCorreo());
-  valuesMap.set('dir', checkDir());
-  valuesMap.set('num', checkNum());
+                    // Actualizar la imagen localmente
+                    imgPerfil.src = result.info.secure_url;
 
-  return valuesMap;
-}
+                    // Disparar un evento 'input' para notificar cambios en la imagen
+                    const inputEvent = new Event('input', { bubbles: true });
+                    imgPerfil.dispatchEvent(inputEvent);
 
-function checkVacios() {
-  const values = setValues();
-  let validos = new Array();
+                    // Guardar la URL de la imagen en la base de datos
+                    const usuario = JSON.parse(localStorage.getItem('usuario'));
+                    fetch(`http://localhost:3000/api/users/${usuario}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            imagen: result.info.secure_url,
+                        }),
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                        });
+                }
+            }
+        );
 
-  values.forEach(function unValido(value, key) {
-    console.log(`${key}: ${value}`);
-
-    if (value) {
-      validos.push(key);
+        botonEditar.addEventListener('click', () => {
+            myWidget.open();
+        });
     }
-  });
 
-  console.log(validos);
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
 
-  if (validos.length == 0) {
-    fireMixin(
-      'error',
-      'Por favor ingrese al menos un dato en formato válido para ser actualizado.',
-      true
-    );
-    return false;
-  } else {
-    fireConfirmacion();
-    return true;
-  }
-}
+    const nombre = document.getElementById('nombre');
+    const correo = document.getElementById('correo');
+    const direccion = document.getElementById('direccionExacta');
+    const numero = document.getElementById('cel');
+    fetch(`http://localhost:3000/api/users/${usuario}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            nombre.value = `${data.nombre} ${data.apellido}`;
+            correo.value = data.correo;
+            direccion.value = data.direccionExacta;
+            numero.value = data.cel;
+            if (data.imagen) {
+                imgPerfil.src = data.imagen;
+            }
 
-function checkNombre() {
-  const nombre = document.getElementById('nombre').value;
-
-  if (nombre == '') {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-function checkCorreo() {
-  const correo = document.getElementById('correo').value;
-
-  // https://www.regexlib.com/REDetails.aspx?regexp_id=26
-  const regExCorreo = new RegExp(
-    '^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$'
-  );
-
-  if (!regExCorreo.test(correo)) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-function checkDir() {
-  const dir = document.getElementById('direccion').value;
-
-  if (dir == '') {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-function checkNum() {
-  const num = document.getElementById('numero').value;
-
-  if (num.toString().length < 8) {
-    return false;
-  } else {
-    return true;
-  }
-}
-
-const formInfo = document.getElementById('form-usuario');
-
-formInfo.onsubmit = function (event) {
-  event.preventDefault();
-  console.clear();
-  if (checkVacios()) {
-    // actualizar en BD.then() redirect a config usuario
-    setTimeout(() => {
-      window.location.href = '../configUsuario/configUsuario.html';
-    }, 3000);
-  }
+            if (data.role === 'admin') {
+                const divInformacionNegocio =
+                    document.querySelector('form-negocio');
+                divInformacionNegocio.style.display = 'none';
+            } else if (data.role === 'usuario') {
+                const divInformacionNegocio =
+                    document.getElementById('infoNegocio-edit');
+                divInformacionNegocio.style.display = 'none';
+            } else if (data.role === 'negocio') {
+                const divInformacionNegocio =
+                    document.getElementById('infoNegocio-edit');
+                divInformacionNegocio.style.display = 'none';
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 };
+
+/* ----------------------------FIN INFO PERSONAL---------------------------------- */
+
+/* ----------------------------VALIDACIONES SEGURIDAD---------------------------------- */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const formSeguridad = document.querySelector('.formulario-seguridad');
+    const seguridadClickSave = document.querySelector('.seguridad-clickSave');
+
+    formSeguridad.addEventListener('submit', function (event) {
+        event.preventDefault();
+        cambiarContrasena();
+    });
+
+    function cambiarContrasena() {
+        const contrasenaActual = document.getElementById('actual').value;
+        const nuevaContrasena = document.getElementById('nueva').value;
+        const confirmarContrasena = document.getElementById('confirmar').value;
+
+        if (!contrasenaActual || !nuevaContrasena || !confirmarContrasena) {
+            mostrarError('Todos los campos son obligatorios.');
+            return;
+        }
+
+        if (nuevaContrasena.length < 8) {
+            mostrarError(
+                'La nueva contraseña debe tener al menos 8 caracteres.'
+            );
+            return;
+        }
+
+        if (nuevaContrasena !== confirmarContrasena) {
+            mostrarError('Las contraseñas no coinciden.');
+            return;
+        }
+
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+
+        fetch(`http://localhost:3000/api/users/cambiar-contrasena/${usuario}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contrasenaActual: contrasenaActual,
+                nuevaContrasena: nuevaContrasena,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Contraseña cambiada:', data);
+                mostrarExito('Contraseña cambiada exitosamente.');
+            })
+            .catch((error) => {
+                console.error('Error al cambiar contraseña:', error);
+                mostrarExito('Contraseña cambiada exitosamente.');
+            });
+    }
+
+    function mostrarError(mensaje) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: mensaje,
+            confirmButtonColor: '#EFB034',
+        });
+    }
+
+    function mostrarExito(mensaje) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: mensaje,
+            confirmButtonColor: '#1DD75B',
+        });
+    }
+});
+
+/* ----------------------------FIN VALIDACIONES SEGURIDAD---------------------------------- */
+
+/* ----------------------------VALIDACIONES NEGOCIO---------------------------------- */
+
+/* FIN VALIDACIONES NEGOCIO */
+
+/* VALIDACIONES PAGOS */
+
+/* FIN VALIDACIONES PAGOS */
+
+/* VALIDACIONES RESERVAS */
+
+const selectMenu = document.getElementById('select');
+
+selectMenu.addEventListener('change', () => {
+    const selectedOption = selectMenu.options[selectMenu.selectedIndex].id;
+
+    switch (selectedOption) {
+        case 'perfil':
+            mostrarSeccion(infoPe);
+            localStorage.getItem('usuario');
+            break;
+        case 'cierreSesion':
+            localStorage.removeItem('usuario');
+            window.location.href = '../index/index.html';
+            break;
+    }
+});

@@ -1,119 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Habitación</title>
-    <link rel="stylesheet" href="../habitaciones/room.css" />
-    <link rel="icon" type="icon" href="../assets/favicon.png" />
-    <link rel="stylesheet" href="../index/for-all.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Habitación</title>
+        <link rel="stylesheet" href="../habitaciones/room.css" />
+        <link rel="icon" type="icon" href="../assets/favicon.png" />
+        <link rel="stylesheet" href="../index/for-all.css" />
 
-    <script defer src="./room.js"></script>
-    <!-- SweetAlert link -->
-    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
+        <script defer src="./room.js"></script>
+        <!-- SweetAlert link -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+        ></script>
+    </head>
 
-  <body>
-    <header>
-      <nav>
-        <div class="icono">
-          <img src="../assets/favicon.png" alt="Logo SyncTravel" />
-          <h1>SyncTravel</h1>
-          s
-        </div>
-        <ul>
-          <li><a href="../index/index.html">Inicio</a></li>
-        </ul>
-        <div>
-          <a href="../configUsuario/configUsuario.html"
-            ><img src="../assets/icono-perfil.png" alt="Perfil de usuario"
-          /></a>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="contenedor">
-        <div>
-          <span class="product-name">
-            <h1>Habitacion Superior</h1>
-            <p>La Fortuna, Alajuela</p>
-          </span>
-          <section>
-            <div class="fotos-room">
-              <div class="foto-principal">
-                <img src="../assets/Fotoprincipal.jpg" alt="" />
-              </div>
-              <div class="fotos-secundarias">
-                <img src="../assets/fotosecundaria1.jpg" alt="" />
-                <img src="../assets/fotosecundaria2.jpg" alt="" />
-                <img src="../assets/fotosecundaria3.jpg" alt="" />
-              </div>
+    <body>
+        <header>
+            <nav>
+                <div class="icono">
+                    <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+                    <h1>SyncTravel</h1>
+                    s
+                </div>
+                <ul>
+                    <li><a href="../index/index.html">Inicio</a></li>
+                </ul>
+                <div class="ingresar">
+                    <a href="../inicioSesion/inicioSesion.html"></a>
+                        ><img
+                            src="../assets/icono-perfil.png"
+                            alt="Perfil de usuario"
+                    /></a>
+                    <select id="select">
+                        <option id="perfil">Perfil</option>
+                        <option id="cierreSesion">Cerrar Sesion</option>
+                    </select>
+                </div>
+                
+            </nav>
+        </header>
+        <main>
+            <section class="contenedor">
+                <div>
+                    <span class="product-name">
+                        <h1>Habitacion Superior</h1>
+                        <p>La Fortuna, Alajuela</p>
+                    </span>
+                    <section>
+                        <div class="fotos-room">
+                            <div class="foto-principal">
+                                <img src="../assets/Fotoprincipal.jpg" alt="" />
+                            </div>
+                            <div class="fotos-secundarias">
+                                <img
+                                    src="../assets/fotosecundaria1.jpg"
+                                    alt=""
+                                />
+                                <img
+                                    src="../assets/fotosecundaria2.jpg"
+                                    alt=""
+                                />
+                                <img
+                                    src="../assets/fotosecundaria3.jpg"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <article id="descripcion">
+                <div class="reserva">
+                    <span class="caracteristicas">
+                        <h2>Casa vacacional</h2>
+                        <p>
+                            6 invitados - 4 camas - 1 baño privado. <br />
+                            Fin de semana <strong>₡65000</strong> / Entre semana
+                            <strong>₡60000.</strong> <br />
+                            Capacidad para 6 personas, cuenta con baño privado,
+                            4 camas, cocina equipada <br />
+                            y una sala de trabajo.
+                        </p>
+
+                        <p>
+                            - 2 camas matrimoniales y 2 individuales. <br />
+                            - Sala de trabajo.
+                        </p>
+                    </span>
+                    <span class="beneficios">
+                        <h3>Este lugar ofrece</h3>
+                        <ol>
+                            <li>Cocina</li>
+                            <li>TV</li>
+                            <li>Aire acondicionado</li>
+                            <li>Wifi</li>
+                            <li>Kit primeros auxilios</li>
+                            <li>Bebidas gratis</li>
+                            <li>Renta de bicicletas</li>
+                            <li>Calefacción</li>
+                        </ol>
+                    </span>
+                </div>
+                <form id="reservaForm">
+                    <label for="checkin">Fecha de Check-in:</label>
+                    <input type="date" id="checkin" /><br />
+
+                    <label for="checkout">Fecha de Check-out:</label>
+                    <input type="date" id="checkout" /><br />
+
+                    <label for="huespedes">Cantidad de Huéspedes:</label>
+                    <input type="number" id="huespedes" /><br />
+
+                    <p>Precio por Noche: <span id="precioNoche">-</span></p>
+                    <p>
+                        Cantidad de Noches: <span id="cantidadNoches">-</span>
+                    </p>
+
+                    <button type="submit" form="reservaForm" id="botonReservar">
+                        Reservar
+                    </button>
+
+                    <div id="precioTotal">
+                        <p>Total: <span id="total"></span></p>
+                    </div>
+                </form>
+            </article>
+        </main>
+        <footer>
+            <div class="footer">
+                <p>
+                    &copy; 2023 SyncTravel Company Inc. | Privacy | All rights
+                    reserved
+                </p>
             </div>
-          </section>
-        </div>
-      </section>
-
-      <article id="descripcion">
-        <div class="reserva">
-          <span class="caracteristicas">
-            <h2>Casa vacacional</h2>
-            <p>
-              6 invitados - 4 camas - 1 baño privado. <br />
-              Fin de semana <strong>₡65000</strong> / Entre semana
-              <strong>₡60000.</strong> <br />
-              Capacidad para 6 personas, cuenta con baño privado, 4 camas,
-              cocina equipada <br />
-              y una sala de trabajo.
-            </p>
-
-            <p>
-              - 2 camas matrimoniales y 2 individuales. <br />
-              - Sala de trabajo.
-            </p>
-          </span>
-          <span class="beneficios">
-            <h3>Este lugar ofrece</h3>
-            <ol>
-              <li>Cocina</li>
-              <li>TV</li>
-              <li>Aire acondicionado</li>
-              <li>Wifi</li>
-              <li>Kit primeros auxilios</li>
-              <li>Bebidas gratis</li>
-              <li>Renta de bicicletas</li>
-              <li>Calefacción</li>
-            </ol>
-          </span>
-        </div>
-        <form id="reservaForm">
-          <label for="checkin">Fecha de Check-in:</label>
-          <input type="date" id="checkin" /><br />
-
-          <label for="checkout">Fecha de Check-out:</label>
-          <input type="date" id="checkout" /><br />
-
-          <label for="huespedes">Cantidad de Huéspedes:</label>
-          <input type="number" id="huespedes" /><br />
-
-          <p>Precio por Noche: <span id="precioNoche">-</span></p>
-          <p>Cantidad de Noches: <span id="cantidadNoches">-</span></p>
-
-          <button type="submit" form="reservaForm" id="botonReservar">
-            Reservar
-          </button>
-
-          <div id="precioTotal">
-            <p>Total: <span id="total"></span></p>
-          </div>
-        </form>
-      </article>
-    </main>
-    <footer>
-      <div class="footer">
-        <p>
-          &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
-        </p>
-      </div>
-    </footer>
-  </body>
+        </footer>
+    </body>
 </html>

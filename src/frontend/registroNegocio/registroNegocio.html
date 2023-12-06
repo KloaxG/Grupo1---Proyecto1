@@ -1,118 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nuevo Negocio</title>
+        <link rel="stylesheet" href="../registroNegocio/registroNegocio.css" />
+        <link rel="icon" type="icon" href="../assets/favicon.png" />
+        <link rel="stylesheet" href="../index/for-all.css" />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+        ></script>
+        <script defer src="../registroNegocio/registroNegocio.js"></script>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nuevo Negocio</title>
-  <link rel="stylesheet" href="../registroNegocio/registroNegocio.css" />
-  <link rel="icon" type="icon" href="../assets/favicon.png" />
-  <link rel="stylesheet" href="../index/for-all.css">
-</head>
+    <body>
+        <header>
+            <nav>
+                <div class="icono">
+                    <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+                    <h1>SyncTravel</h1>
+                </div>
+                <ul>
+                    <li><a href="../index/index.html">Inicio</a></li>
+                </ul>
+                <div>
+                    <a href="../configUsuario/configUsuario.html"
+                        ><img
+                            src="../assets/icono-perfil.png"
+                            alt="Perfil de usuario"
+                    /></a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <aside>
+                <img src="../assets/imagen.png" alt="imagen aside habitacion" />
+            </aside>
+            <section>
+                <div>
+                    <h2 class="logo">Registro de <span>negocio</span></h2>
+                </div>
+                <form id="form-registro-negocio">
+                    <div class="grid">
+                        <div>
+                            <label for="name">Nombre del negocio</label>
+                            <input
+                                type="text"
+                                placeholder="Ingrese el nombre"
+                                id="nombreNegocio"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">Categoría</label>
+                            <input
+                                type="text"
+                                placeholder="Categoría"
+                                id="categoriaNegocio"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">Descripción general</label>
+                            <input
+                                type="text"
+                                placeholder="Descripción"
+                                id="descripcionNegocio"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">Correo electrónico</label>
+                            <input
+                                type="email"
+                                placeholder="ejemplo.correo@gmail.com"
+                                id="correoNegocio"
+                            />
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div>
+                            <label for="name">Provincia</label>
+                            <input
+                                type="text"
+                                placeholder="Provincia"
+                                id="provinciaNegocio"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">Cantón</label>
+                            <input
+                                type="text"
+                                placeholder="Canton"
+                                id="cantonNegocio"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">Distrito</label>
+                            <input
+                                type="text"
+                                placeholder="Distrito"
+                                id="distritoNegocio"
+                            />
+                        </div>
+                        <div>
+                            <label for="name">Otras señas</label>
+                            <input
+                                type="text"
+                                placeholder="Otras señas"
+                                id="senasNegocio"
+                            />
+                        </div>
+                    </div>
+                    <div class="register">
+                        <div>
+                            <input type="checkbox" id="termsNegocio" />
+                            <label
+                                >Al registrarme, acepto los Términos <br />
+                                de uso y la Política de privacidad.</label
+                            >
+                        </div>
+                        <button type="submit">Crear cuenta</button>
+                    </div>
+                    <div class="fotos">
+                        <img id="prevista_imagen" />
+                        <p id="fileNegocio">Buscar imagen</p>
+                    </div>
+                </form>
+            </section>
+            <br />
+        </main>
 
-<body>
-  <header>
-    <nav>
-      <div class="icono">
-        <img src="../assets/favicon.png" alt="Logo SyncTravel" />
-        <h1>SyncTravel</h1>
-      </div>
-      <ul>
-        <li><a href="../index/index.html">Inicio</a></li>
-      </ul>
-      <div>
-        <a href="../configUsuario/configUsuario.html"><img src="../assets/icono-perfil.png"
-            alt="Perfil de usuario" /></a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <aside>
-      <img src="../assets/imagen.png" alt="imagen aside habitacion">
-    </aside>
-    <section>
-      <div>
-        <h2 class="logo"> Registro de <span>negocio</span></h2>
-      </div>
-      <form>
-        <div class="grid">
-          <div>
-            <label for="name">Nombre</label>
-            <input type="text" required placeholder="Nombre de usuario">
-          </div>
-          <div>
-            <label for="name">Apellido</label>
-            <input type="text" required placeholder="Apellido">
-          </div>
-          <div>
-            <label for="name">Fecha de nacimiento</label>
-            <input type="date" required placeholder="Fecha de nacimiento">
-          </div>
-          <div>
-            <label for="name">ID</label>
-            <input type="number" required placeholder="Cedula, pasaporte, otro">
-          </div>
-          <div>
-            <label for="name">Nombre del negocio</label>
-            <input type="text" required placeholder="Ingrese el nombre">
-          </div>
-          <div>
-            <label for="name">Categoría</label>
-            <input type="text" required placeholder="Categoría">
-          </div>
-        </div>
-        <div class="grid">
-          <div>
-            <label for="name">Descripción general</label>
-            <input type="text" required placeholder="Descripción">
-          </div>
-          <div>
-            <label for="name">Provincia</label>
-            <input type="text" required placeholder="Provincia">
-          </div>
-          <div>
-            <label for="name">Cantón</label>
-            <input type="text" required placeholder="Canton">
-          </div>
-          <div>
-            <label for="name">Distrito</label>
-            <input type="text" required placeholder="Distrito">
-          </div>
-          <div>
-            <label for="name">Otras señas</label>
-            <input type="text" required placeholder="Otras señas">
-          </div>
-          <div>
-            <label for="name">Correo electrónico</label>
-            <input type="email" required placeholder="ejemplo.correo@gmail.com">
-          </div>
-        </div>
-        </div>
-        <div class="register">
-          <div>
-            <input type="checkbox" required>
-            <label>Al registrarme, acepto los Términos <br> de uso y la Política de privacidad.</label>
-          </div>
-          <button type="submit">Crear cuenta</button>
-        </div>
-        <div class="fotos">
-          <label for="file">Agregar fotos</label>
-          <input type="file" id="file" multiple accept=".jpg, .jpeg, .png" required placeholder="agregar fotos">
-        </div>
-      </form>
-      </div>
-    </section>
-    <br />
-  </main>
-  </main>
-  <footer>
-    <div class="footer">
-      <p>
-        &copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved
-      </p>
-    </div>
-  </footer>
-  <script src="registroNegocio.js"></script>
-</body>
-
+        <footer>
+            <div class="footer">
+                <p>
+                    &copy; 2023 SyncTravel Company Inc. | Privacy | All rights
+                    reserved
+                </p>
+            </div>
+        </footer>
+        <script
+            src="https://upload-widget.cloudinary.com/global/all.js"
+            type="text/javascript"
+        ></script>
+    </body>
 </html>

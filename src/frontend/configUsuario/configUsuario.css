@@ -126,7 +126,7 @@
 .form-usuario input {
     border: #000 1px solid;
     padding: 10px;
-    font-size: 12px;
+    font-size: 15px;
     width: 100%;
 }
 
@@ -148,28 +148,226 @@
     color: #e4bb97;
 }
 
-.editar {
+.infopeclick-edit {
     display: flex;
     justify-content: center;
     border: #000 1px solid;
     background: #e4bb97;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 100%;
     cursor: pointer;
     padding: 10px;
-    width: 30%;
+    width: 15%;
 }
-.editar a {
+
+.infopeclick-edit:hover {
+    color: #000;
+}
+
+textarea {
+    resize: none;
+    border: #000 1px solid;
+    padding: 8px;
+    font-size: 15px;
+}
+
+textarea:focus {
+    outline: none;
+    border: #29c3e5 1px solid;
+    padding: 5px;
+}
+
+.span-flex {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.span-flex .editar {
+    width: 15%;
+    font-size: 10px;
+}
+.span-flex .editar a {
+    font-size: 10px;
+}
+.span-flex .editar a:hover {
+    color: #000;
+}
+
+/* CSS SEGURIDAD */
+
+.top-right-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.top-right-sec h1 {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.logo-sec h2 {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
+    width: max-content;
 }
-.editar a:hover {
+
+.logo-sec i {
+    color: #e4bb97;
+}
+
+.flex-opciones-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+.formulario-seguridad {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    align-items: center;
+}
+
+.flex-opciones-sec label {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.flex-opciones-sec input {
+    border: #000 1px solid;
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.flex-opciones-sec input:focus {
+    outline: none;
+    border: #29c3e5 1px solid;
+}
+.boton-seguridad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 5px;
+    border: #000 1px solid;
+}
+
+.seguridad-clickSave {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #e4bb97;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.seguridad-clickSave:hover {
     color: #000;
+}
+
+/* FIN CSS SEGURIDAD */
+
+/* CSS NEGOCIO */
+
+.right-neg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    height: 48vh;
+}
+
+.top-right-neg {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+}
+.flex-imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: end;
+}
+
+.flex-imagenes img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border: #000 1px solid;
+}
+
+.edit-fotos {
+    background: fixed;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e4bb97;
+    cursor: pointer;
+}
+
+.edit-fotos i,
+.flex-opciones span i {
+    background: #000;
+    padding: 8px;
+    border-radius: 100%;
+}
+
+.form-negocio {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+}
+
+.flex-opciones-neg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-opciones-neg span {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    width: 50%;
+    gap: 5px;
+}
+
+.flex-opciones-neg button {
+    border: none;
+    background: fixed;
+    color: #e4bb97;
+    cursor: pointer;
+}
+
+.form-negocio label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.form-negocio input {
+    border: #000 1px solid;
+    padding: 10px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.form-negocio input:focus {
+    outline: none;
+    border: #29c3e5 1px solid;
 }
 
 textarea {
@@ -183,7 +381,272 @@ textarea:focus {
     padding: 5px;
 }
 
+.edit-bajo .infoNegocio-edit,
+.infoNegocio-edit-uno,
+.edicion-boton {
+    border: #000 1px solid;
+    background: #e4bb97;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+}
+
+.edit-bajo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoNegocio-edit a,
+.infoNegocio-edit-uno a,
+.edicion-boton a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.infoNegocio-edit a:hover,
+.infoNegocio-edit-uno a:hover,
+.edicion-boton a:hover {
+    color: #000;
+}
+
+/* FIN CSS SEGURIDAD */
+
+/* CSS PAGO */
+
+.right-pago {
+    display: flex;
+    flex-direction: column;
+
+    gap: 50px;
+}
+
+.top-right-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.top-right-pago h1 {
+    font-weight: 600;
+    font-size: 30px;
+    width: max-content;
+}
+
+.logo-pago h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+}
+
+.metodos-pago {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.metodos-pago i {
+    padding: 0px 5px;
+    font-size: 30px;
+}
+
+.logo-pago i {
+    color: #e4bb97;
+}
+
+.formulario-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex-opciones-pago {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+}
+
+.flex-opciones-pago span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.flex-opciones-pago label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.flex-opciones-pago input {
+    border: #000 1px solid;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.flex-opciones-pago input::placeholder {
+    font-size: 14px;
+}
+
+.flex-opciones-pago input:focus {
+    outline: none;
+    border: #29c3e5 1px solid;
+}
+
+.flex-boton-pago {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-guardar-pago {
+    background: #e4bb97;
+    border: #000 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 40%;
+    cursor: pointer;
+}
+
+.btn-guardar-pago:hover {
+    color: #000;
+}
+
+.tarjetas-pago {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.primer-tarjeta-pago {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.primer-tarjeta-pago i {
+    color: #e4bb97;
+    font-size: 40px;
+}
+
+.btn-borrar-pago {
+    background: #e4bb97;
+    border: #000 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 30%;
+    cursor: pointer;
+}
+.btn-borrar-pago:hover {
+    color: #000;
+}
+
+/* FIN CSS PAGO */
+
+/* CSS RESERVAS */
+
+.right-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.top-right-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.top-right-reserva h1 {
+    font-weight: 600;
+    font-size: 30px;
+    width: max-content;
+}
+
+.logo-reserva h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+}
+
+.reservas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    width: 90%;
+    height: 48vh;
+}
+
+.reserva {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.reserva-izq {
+    width: 30%;
+    height: 100%;
+}
+
+.reserva-izq img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.boton-recomendar {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton-recomendar button {
+    width: 40%;
+    height: 20%;
+    background: #e4bb97;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: #000 1px solid;
+    cursor: pointer;
+}
+.boton-recomendar button:hover {
+    color: #000;
+}
+
 /* FIN CONTENIDO DERECHA */
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
 
 /* FOOTER ESTATICO*/
 footer {

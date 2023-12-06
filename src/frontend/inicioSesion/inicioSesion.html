@@ -1,89 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SyncTravel - Ingresar</title>
-    <link rel="stylesheet" href="../inicioSesion/inicioSesion.css" />
-    <link rel="icon" type="icon" href="../assets/favicon.png" />
-    <link rel="stylesheet" href="../index/for-all.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SyncTravel - Ingresar</title>
+        <link rel="stylesheet" href="../inicioSesion/inicioSesion.css" />
+        <link rel="icon" type="icon" href="../assets/favicon.png" />
+        <link rel="stylesheet" href="../index/for-all.css" />
 
-    <!-- SweetAlert link -->
-    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script defer src="./inicioSesion.js"></script>
-  </head>
+        <!-- SweetAlert link -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/sweetalert2@11"
+        ></script>
+        <script defer src="./inicioSesion.js"></script>
+    </head>
 
-  <header>
-    <nav>
-      <div class="icono">
-        <img src="../assets/favicon.png" alt="Logo SyncTravel" />
-        <h1>SyncTravel</h1>
-      </div>
-      <ul>
-        <li><a href="../index/index.html">Inicio</a></li>
-      </ul>
-      <div>
-        <a href="../configUsuario/configUsuario.html"
-          ><img src="../assets/icono-perfil.png" alt="Perfil de usuario"
-        /></a>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <div class="icono">
+                <img src="../assets/favicon.png" alt="Logo SyncTravel" />
+                <h1>SyncTravel</h1>
+            </div>
+            <ul>
+                <li><a href="../index/index.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <body>
-    <main>
-      <section class="contenedor">
-        <div class="image">
-          <img src="../assets/imagen-cr.jpg" alt="imagen-principal" />
+    <body>
+        <main>
+            <section class="contenedor">
+                <div class="image">
+                    <img src="../assets/imagen-cr.jpg" alt="imagen-principal" />
+                </div>
+                <div class="formulario">
+                    <form id="formulario">
+                        <span>
+                            <h1>Bienvenido</h1>
+                            <p>Inicia sesión con tu cuenta</p>
+                        </span>
+                        <div id="inputUsuario">
+                            <label for="username">Email:</label>
+                            <input
+                                type="text"
+                                id="correo"
+                                name="correo"
+                                placeholder="Ingrese email"
+                                title="Minimo 4 digitos"
+                            />
+                        </div>
+                        <div id="inputContra">
+                            <label for="password">Contraseña:</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Ingrese contraseña"
+                                title=""
+                            />
+                        </div>
+                        <button type="submit" value="Login" id="botonLogin">
+                            Ingresar
+                        </button>
+                        <div class="password_olvidada">
+                            <a href="#" id="recuperar"
+                                >¿Olvidaste tu contraseña?</a
+                            >
+                            <br />
+                            <a href="../registroUsuario/registroUsuario.html">
+                                Crear cuenta</a
+                            >
+                        </div>
+                    </form>
+                    <div>
+                        <a href="../configAdmin/tablaGeneral.html"
+                            ><button>Admin</button></a
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <footer>
+        <div class="footer">
+            <p>
+                &copy; 2023 SyncTravel Company Inc. | Privacy | All rights
+                reserved
+            </p>
         </div>
-        <div class="formulario">
-          <form id="formulario">
-            <span>
-              <h1>Bienvenido</h1>
-              <p>Inicia sesión con tu cuenta</p>
-            </span>
-            <div id="inputUsuario">
-              <label for="username">Usuario o email:</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                placeholder="Ingrese"
-                title="Minimo 4 digitos"
-              />
-            </div>
-            <div id="inputContra">
-              <label for="password">Contraseña:</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Ingrese contraseña"
-                title=""
-              />
-            </div>
-            <button type="submit" value="Login" id="botonLogin">
-              Ingresar
-            </button>
-            <div class="password_olvidada">
-              <a href="#" id="recuperar">¿Olvidaste tu contraseña?</a> <br />
-              <a href="../registroUsuario/registroUsuario.html">
-                Crear cuenta</a
-              >
-            </div>
-          </form>
-          <div>
-            <a href="../configAdmin/tablaGeneral.html"
-              ><button>Admin</button></a
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-  </body>
-  <footer>
-    <div class="footer">
-      <p>&copy; 2023 SyncTravel Company Inc. | Privacy | All rights reserved</p>
-    </div>
-  </footer>
+    </footer>
 </html>
