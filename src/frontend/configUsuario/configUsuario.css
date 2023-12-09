@@ -75,6 +75,9 @@
     border-radius: 80%;
 }
 
+.seleccion {
+}
+
 /* FIN CONTENIDO IZQUIERDA */
 
 /* CONTENIDO DERECHA */
@@ -289,23 +292,35 @@ textarea:focus {
 }
 
 .top-right-neg {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     font-size: 20px;
 }
 .flex-imagenes {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    width: 40%;
     gap: 10px;
-    align-items: end;
+    align-items: center;
 }
 
 .flex-imagenes img {
-    width: 100%;
+    width: 50%;
     object-fit: cover;
     height: 100%;
     border: #000 1px solid;
+}
+
+.flex-imagenes button {
+    border: #000 1px solid;
+    background: #e4bb97;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 10px;
+    width: 8%;
 }
 
 .edit-fotos {
@@ -361,7 +376,7 @@ textarea:focus {
 .form-negocio input {
     border: #000 1px solid;
     padding: 10px;
-    font-size: 12px;
+    font-size: 15px;
     width: 100%;
 }
 
@@ -394,12 +409,14 @@ textarea:focus {
     width: 20%;
 }
 
+.infoNegocio-edit {
+}
+
 .edit-bajo {
     display: flex;
     justify-content: space-between;
 }
 
-.infoNegocio-edit a,
 .infoNegocio-edit-uno a,
 .edicion-boton a {
     text-decoration: none;

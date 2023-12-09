@@ -2,19 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schemaPago = new Schema({
-    nombre: {
+    nombreTarjeta: {
         type: String,
         required: true,
     },
-    numero: {
+    numeroTarjeta: {
         type: Number,
         required: true,
     },
-    fecha: {
+    fechaTarjeta: {
         type: String,
         required: true,
     },
-    cvv: {
+    cvvTarjeta: {
         type: Number,
         required: true,
     },
@@ -54,7 +54,7 @@ const schemaNegocio = new Schema({
         required: true,
     },
     fotosNegocio: {
-        type: String,
+        type: Array,
         required: true,
     },
 });

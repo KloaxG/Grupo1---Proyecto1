@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../configAdmin/reportesAdmin.css">
     <link rel="icon" type="icon" href="../assets/favicon.png" />
     
+    
 </head>
 
 <body>
@@ -26,10 +27,12 @@
         <div class="contenido">
             <header>
                 <h1>Reportes</h1>
-                <div>
-                    <a href="../configUsuario/configUsuario.html"><img src="../assets/H1.jpg" alt="Perfil de usuario">
-                        <p>login.admin@gmail.com</p>
-                    </a>
+                <div class="seleccion">
+                    <select id="select">
+                        <option></option>
+                        <option id="perfil">Perfil</option>
+                        <option id="cierreSesion">Cerrar Sesion</option>
+                    </select>
                 </div>
             </header>
             <div class="main">
@@ -95,6 +98,7 @@
             </div>
         </footer>
         <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
+        <script src="cierre.js"></script>
 </body>
 
 </html>

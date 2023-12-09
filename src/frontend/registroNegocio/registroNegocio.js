@@ -3,6 +3,8 @@ const formulario = document.getElementById('form-registro-negocio');
 const boton = document.getElementById('fileNegocio');
 const previstaImagen = document.getElementById('prevista_imagen');
 
+let datosNegocio = {}; // Declaración de la variable datosNegocio
+
 let myWidget = cloudinary.createUploadWidget(
     {
         cloudName: 'digw2tk5v',
@@ -11,12 +13,26 @@ let myWidget = cloudinary.createUploadWidget(
     (error, result) => {
         if (!error && result && result.event === 'success') {
             console.log('Done! Here is the image info: ', result.info);
-            previstaImagen.src = result.info.secure_url;
+
+            // Obtener la URL de la imagen subida
+            const imageUrl = result.info.secure_url;
+
+            // Asegurarse de que fotosNegocio sea un array
+            if (!datosNegocio.fotosNegocio) {
+                datosNegocio.fotosNegocio = [];
+            }
+
+            // Agregar la URL al array
+            datosNegocio.fotosNegocio.push(imageUrl);
+
+            // Actualizar la vista previa con la primera imagen (puedes ajustar según tus necesidades)
+            previstaImagen.src = datosNegocio.fotosNegocio[0];
 
             // No asignar la imagen al usuario aquí
         }
     }
 );
+
 boton.addEventListener('click', () => {
     myWidget.open();
 });
@@ -48,7 +64,8 @@ formulario.addEventListener('submit', (event) => {
     const cantonNegocio = document.getElementById('cantonNegocio').value;
     const distritoNegocio = document.getElementById('distritoNegocio').value;
     const senasNegocio = document.getElementById('senasNegocio').value;
-    const datosNegocio = {
+
+    datosNegocio = {
         nombreNegocio,
         categoriaNegocio,
         descripcionNegocio,
@@ -57,7 +74,7 @@ formulario.addEventListener('submit', (event) => {
         cantonNegocio,
         distritoNegocio,
         senasNegocio,
-        fotosNegocio: previstaImagen.src,
+        fotosNegocio: datosNegocio.fotosNegocio,
     };
 
     const usuario = JSON.parse(localStorage.getItem('usuario'));

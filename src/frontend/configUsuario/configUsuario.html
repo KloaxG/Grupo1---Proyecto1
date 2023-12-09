@@ -27,7 +27,7 @@
                         <a href="../index/index.html">Inicio</a>
                     </li>
                 </ul>
-                <div>
+                <div class="seleccion">
                     <select id="select">
                         <option id="perfil">Perfil</option>
                         <option id="cierreSesion">Cerrar Sesion</option>
@@ -65,6 +65,12 @@
                         <li class="reserva-click">
                             <i class="fa-solid fa-book-open"></i
                             ><a href="#">Historial de Reservas</a>
+                        </li>
+                        <li id="dashboard">
+                            <i class="fa-solid fa-book-open"></i
+                            ><a href="../configAdmin/reportesAdmin.html"
+                                >Admin Dashboard</a
+                            >
                         </li>
                     </div>
                 </section>
@@ -143,18 +149,18 @@
                                         >Contraseña enviada por correo</label
                                     >
                                     <input
+                                        id="actual"
                                         type="password"
                                         name="actual"
-                                        id="actual"
                                         placeholder="Contraseña actual"
                                     />
                                 </div>
                                 <div class="flex-opciones-sec">
                                     <label for="nueva">Nueva contraseña</label>
                                     <input
+                                        id="nueva"
                                         type="password"
                                         name="nueva"
-                                        id="nueva"
                                         placeholder="Nueva contraseña"
                                     />
                                 </div>
@@ -183,12 +189,14 @@
                             <div class="top-right-neg">
                                 <h2>Información de Negocio</h2>
                                 <div class="flex-imagenes">
-                                    <img src="../assets/foto1.jpg" alt="" />
-                                    <img src="../assets/foto2.avif" alt="" />
-                                    <img src="../assets/foto2.jpg" alt="" />
+                                    <img id="img-one" alt="" />
+                                    <img id="img-two" alt="" />
+                                    <img id="img-three" alt="" />
+                                    <!-- <button class="editFotosNegocio">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </button> -->
                                 </div>
                             </div>
-
                             <form class="form-negocio">
                                 <div class="flex-opciones-neg">
                                     <label for="nombre" id="labelNombre"
@@ -196,8 +204,9 @@
                                     >
                                     <span>
                                         <input
+                                            disabled
                                             type="text"
-                                            id="nombre-negocio"
+                                            id="nombreNegocio"
                                         />
                                     </span>
                                 </div>
@@ -206,8 +215,9 @@
                                     <label for="correo">Contacto</label>
                                     <span>
                                         <input
+                                            disabled
                                             type="text"
-                                            id="contacto-negocio"
+                                            id="correoNegocio"
                                         />
                                     </span>
                                 </div>
@@ -216,8 +226,9 @@
                                     <label for="direccion">Dirección</label>
                                     <span>
                                         <textarea
+                                            disabled
                                             name="direccion"
-                                            id="direccion-negocio"
+                                            id="senasNegocio"
                                             cols="70"
                                             rows="3"
                                         ></textarea>
@@ -228,8 +239,9 @@
                                     <label for="direccion">Descripción</label>
                                     <span>
                                         <textarea
+                                            disabled
                                             name="descripción"
-                                            id="descripcion-negocio"
+                                            id="descripcionNegocio"
                                             cols="70"
                                             rows="3"
                                         ></textarea>
@@ -243,87 +255,11 @@
                                             >Registro Negocio</a
                                         >
                                     </button>
-                                    <button
-                                        class="infoNegocio-edit"
-                                        type="submit"
-                                    >
-                                        <a class="negpeclick-edit"
-                                            ><i class="fa-solid fa-pencil"></i
-                                            >Editar Negocio</a
-                                        >
-                                    </button>
                                 </div>
                             </form>
                         </section>
                     </div>
-                    <div id="infoNegocio-edit" class="hide">
-                        <section class="right-neg">
-                            <div class="top-right-neg">
-                                <h2>Información de Negocio</h2>
-                                <div class="flex-imagenes">
-                                    <img src="../assets/foto1.jpg" alt="" />
-                                    <img src="../assets/foto2.avif" alt="" />
-                                    <img src="../assets/foto2.jpg" alt="" />
 
-                                    <button class="edit-fotos">
-                                        <i class="fa-solid fa-pencil"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <form id="form-negocio" class="form-negocio">
-                                <div class="flex-opciones-neg">
-                                    <label for="nombre" id="labelNombre"
-                                        >Nombre de negocio</label
-                                    >
-                                    <span>
-                                        <input id="nombre" type="text" />
-                                    </span>
-                                </div>
-                                <hr />
-                                <div class="flex-opciones-neg">
-                                    <label for="correo">Contacto</label>
-                                    <span>
-                                        <input id="correo" type="text" />
-                                    </span>
-                                </div>
-                                <hr />
-                                <div class="flex-opciones-neg">
-                                    <label for="direccion">Dirección</label>
-                                    <span>
-                                        <textarea
-                                            name="direccion"
-                                            id="direccion"
-                                            cols="70"
-                                            rows="3"
-                                        ></textarea>
-                                    </span>
-                                </div>
-                                <hr />
-                                <div class="flex-opciones-neg">
-                                    <label for="descripcion">Descripción</label>
-                                    <span>
-                                        <textarea
-                                            name="direccion"
-                                            id="descripcion"
-                                            cols="70"
-                                            rows="3"
-                                        ></textarea>
-                                    </span>
-                                </div>
-                                <hr />
-                                <button
-                                    type="submit"
-                                    form="form-negocio"
-                                    class="edicion-boton"
-                                >
-                                    <a class="negpeclick-save"
-                                        ><i class="fa-solid fa-save"></i>Guardar
-                                        cambios</a
-                                    >
-                                </button>
-                            </form>
-                        </section>
-                    </div>
                     <div id="metodoPago" class="hide">
                         <section class="right-pago">
                             <div class="top-right-pago">
@@ -355,143 +291,64 @@
                                 </div>
                             </div>
 
-                            <form class="formulario-pago">
-                                <div class="flex-opciones-pago">
-                                    <span>
-                                        <label for="actual"
-                                            >Nombre en tarjeta</label
-                                        >
-                                        <input
-                                            type="text"
-                                            name="actual"
-                                            id="actual"
-                                            placeholder="Nombre en la tarjeta"
-                                        />
-                                    </span>
-                                    <span>
-                                        <label for="actual"
-                                            >Número de tarjeta</label
-                                        >
-                                        <input
-                                            type="text"
-                                            name="actual"
-                                            id="actual"
-                                            placeholder="Ingresa número de tarjeta"
-                                        />
-                                    </span>
-                                </div>
-                                <div class="flex-opciones-pago">
-                                    <span>
-                                        <label for="nueva"
-                                            >Fecha de vencimiento</label
-                                        >
-                                        <input
-                                            type="date"
-                                            name="nueva"
-                                            id="nueva"
-                                            placeholder="MM/YY"
-                                        />
-                                    </span>
-                                    <span>
-                                        <label for="nueva">CVV</label>
-                                        <input
-                                            type="text"
-                                            name="nueva"
-                                            id="nueva"
-                                            placeholder="Ingresa CVV"
-                                        />
-                                    </span>
-                                </div>
-                                <div class="flex-boton-pago">
-                                    <button
-                                        type="submit"
-                                        value="Eliminar"
-                                        class="btn-guardar-pago"
+                            <div class="flex-opciones-pago">
+                                <span>
+                                    <label for="actual"
+                                        >Nombre en tarjeta</label
                                     >
-                                        Guardar tarjeta
-                                    </button>
-                                </div>
-                            </form>
+                                    <input
+                                        type="text"
+                                        name="actual"
+                                        id="nombreTarjeta"
+                                        placeholder="Nombre en la tarjeta"
+                                    />
+                                </span>
+                                <span>
+                                    <label for="actual"
+                                        >Número de tarjeta</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="actual"
+                                        id="numeroTarjeta"
+                                        placeholder="Ingresa número de tarjeta"
+                                    />
+                                </span>
+                            </div>
+                            <div class="flex-opciones-pago">
+                                <span>
+                                    <label for="nueva"
+                                        >Fecha de vencimiento</label
+                                    >
+                                    <input
+                                        type="date"
+                                        name="nueva"
+                                        id="fechaTarjeta"
+                                        placeholder="MM/YY"
+                                    />
+                                </span>
+                                <span>
+                                    <label for="nueva">CVV</label>
+                                    <input
+                                        type="text"
+                                        name="nueva"
+                                        id="cvvTarjeta"
+                                        placeholder="Ingresa CVV"
+                                    />
+                                </span>
+                            </div>
+                            <div class="flex-boton-pago">
+                                <button
+                                    type="submit"
+                                    value="Eliminar"
+                                    class="btn-guardar-pago"
+                                >
+                                    Guardar tarjeta
+                                </button>
+                            </div>
 
                             <article class="tarjetas-pago">
-                                <div class="primer-tarjeta-pago">
-                                    <div>
-                                        <i
-                                            class="fa-brands fa-cc-visa"
-                                            style="color: #283fe6"
-                                        ></i>
-                                    </div>
-                                    <div class="tarjeta-number">
-                                        <p>**** **** **** 1234</p>
-                                    </div>
-                                    <div class="tarjeta-expire">
-                                        <p>12/23</p>
-                                    </div>
-                                    <div class="tarjeta-name">
-                                        <p>Nombre en la tarjeta</p>
-                                    </div>
-                                    <div class="boton-tarjeta">
-                                        <button
-                                            type="submit"
-                                            value="Eliminar"
-                                            class="btn-borrar-pago"
-                                        >
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="primer-tarjeta-pago">
-                                    <div>
-                                        <i
-                                            class="fa-brands fa-cc-mastercard"
-                                            style="color: #b62b2b"
-                                        ></i>
-                                    </div>
-                                    <div class="tarjeta-number">
-                                        <p>**** **** **** 1234</p>
-                                    </div>
-                                    <div class="tarjeta-expire">
-                                        <p>12/23</p>
-                                    </div>
-                                    <div class="tarjeta-name">
-                                        <p>Nombre en la tarjeta</p>
-                                    </div>
-                                    <div class="boton-tarjeta">
-                                        <button
-                                            type="submit"
-                                            value="Eliminar"
-                                            class="btn-borrar-pago"
-                                        >
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="primer-tarjeta-pago">
-                                    <div>
-                                        <i
-                                            class="fa-brands fa-cc-amex"
-                                            style="color: #005eff"
-                                        ></i>
-                                    </div>
-                                    <div class="tarjeta-number">
-                                        <p>**** **** **** 1234</p>
-                                    </div>
-                                    <div class="tarjeta-expire">
-                                        <p>12/23</p>
-                                    </div>
-                                    <div class="tarjeta-name">
-                                        <p>Nombre en la tarjeta</p>
-                                    </div>
-                                    <div class="boton-tarjeta">
-                                        <button
-                                            type="submit"
-                                            value="Eliminar"
-                                            class="btn-borrar-pago"
-                                        >
-                                            Eliminar
-                                        </button>
-                                    </div>
-                                </div>
+                                
                             </article>
                         </section>
                     </div>

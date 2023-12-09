@@ -226,10 +226,90 @@ app.patch('/api/users/:id', async (req, res) => {
     }
 });
 
+/* REALIZA EL UPLOAD DE FOTO DE PERFIL A CLOUDINARY DESDE EL APARTADO DE NEGOCIO */
+
+app.patch('/api/negocio/:idUsuario/:idNegocio', async (req, res) => {
+    const idUsuario = req.params.idUsuario;
+    const idNegocio = req.params.idNegocio;
+    const updatedNegocioData = req.body;
+
+    try {
+        if (updatedNegocioData.fotosNegocio) {
+            const updatedNegocio = await modeloUsuario.findOneAndUpdate(
+                { _id: idUsuario, 'negocio._id': idNegocio },
+                {
+                    $set: {
+                        'negocio.$.fotosNegocio':
+                            updatedNegocioData.fotosNegocio,
+                    },
+                },
+                { new: true }
+            );
+            res.json(updatedNegocio);
+        } else {
+            const updatedNegocio = await modeloUsuario.findOneAndUpdate(
+                { _id: idUsuario, 'negocio._id': idNegocio },
+                { $set: { 'negocio.$': updatedNegocioData } },
+                { new: true }
+            );
+            res.json(updatedNegocio);
+        }
+    } catch (error) {
+        console.error('Error al actualizar negocio:', error);
+    }
+});
+
+/* REALIZA EL GUARDADO DE UNA TARJETA DE PAGO DESDE LA INTERFAZ DE GUARDADO */
+
+app.post('/api/users/:id/tarjetas', async (req, res) => {
+    const idUsuario = req.params.id;
+
+    try {
+        const usuario = await modeloUsuario.findById(idUsuario);
+        if (!usuario) {
+            console.log('Usuario no encontrado');
+            res.status(404).send('Usuario no encontrado');
+            return;
+        }
+        usuario.pago.push(req.body);
+        await usuario.save();
+        res.status(201).send('Tarjeta guardada exitosamente');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al guardar tarjeta');
+    }
+});
+
+
+
+/* ELIMINA UNA TARJETA DE PAGO DESDE LA INTERFAZ DE USUARIO */
+
+app.delete('/api/users/:id/tarjetas/:idTarjeta', async (req, res) => {
+    const idUsuario = req.params.id;
+    const idTarjeta = req.params.idTarjeta;
+
+    try {
+        const usuario = await modeloUsuario.findById(idUsuario);
+        if (!usuario) {
+            console.log('Usuario no encontrado');
+            res.status(404).send('Usuario no encontrado');
+            return;
+        }
+        usuario.pago = usuario.pago.filter(
+            (tarjeta) => tarjeta._id.toString() !== idTarjeta
+        );
+        await usuario.save();
+        res.status(200).send('Tarjeta eliminada exitosamente');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al eliminar tarjeta');
+    }
+});
+
 /* GET DE LOS USUARIOS Y SUS DATOS */
 
 app.get('/api/users/:id', async (req, res) => {
-    console.log('GET usuariosS');
+    console.log('GET usuarios');
     try {
         const id = req.params.id;
         const usuario = await modeloUsuario.findById(id);
@@ -238,6 +318,34 @@ app.get('/api/users/:id', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al obtener usuario');
+    }
+});
+
+app.get('/api/users', async (req, res) => {
+    console.log('GET usuarios');
+    try {
+        const usuarios = await modeloUsuario.find();
+        console.log('Usuarios encontrados', usuarios);
+        res.status(200).send(usuarios);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error al obtener usuarios');
+    }
+});
+
+/* GET DE LOS NEGOCIOS Y SUS DATOS */
+
+app.get('/api/negocio/:idUsuario', async (req, res) => {
+    const idUsuario = req.params.idUsuario;
+    try {
+        const usuario = await modeloUsuario.findById(idUsuario);
+        if (!usuario) {
+            return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+        }
+        res.status(200).json(usuario.negocio);
+    } catch (error) {
+        console.error('Error al obtener negocios:', error);
+        res.status(500).json({ mensaje: 'Error interno del servidor' });
     }
 });
 

@@ -13,7 +13,7 @@
     <div class="contenedor">
         <nav>
             <ul>
-                <li><a href="../configAdmin/tablaGeneral.css"><span><i class="fa-solid fa-table"></i></span>Tabla General</a></li>
+                <li><a href="../configAdmin/tablaGeneral.html"><span><i class="fa-solid fa-table"></i></span>Tabla General</a></li>
                 <li><a href="../configAdmin/reportesAdmin.html"><span><i class="fa-solid fa-folder-open"></i></span>Reportes</a>
                 </li>
                 <li><a href="../configAdmin/Solicitudes.html"><span><i class="fa-solid fa-folder-open"></i></span>Solicitudes</a>
@@ -23,10 +23,12 @@
         <div class="contenido">
             <header>
                 <h1>Tabla General</h1>
-                <div>
-                    <a href="../configUsuario/configUsuario.html"><img src="../assets/H1.jpg" alt="Perfil de usuario">
-                        <p>login.admin@gmail.com</p>
-                    </a>
+                <div class="seleccion">
+                    <select id="select">
+                        <option></option>
+                        <option id="perfil">Perfil</option>
+                        <option id="cierreSesion">Cerrar Sesion</option>
+                    </select>
                 </div>
             </header>
             <div class="main">
@@ -80,6 +82,7 @@
             </div>
         </footer>
         <script src="https://kit.fontawesome.com/3411ce7134.js" crossorigin="anonymous"></script>
+        <script src="cierre.js"></script>
 </body>
 
 </html>
